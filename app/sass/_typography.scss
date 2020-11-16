@@ -1,0 +1,49 @@
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 0;
+  font-family: $mainfamily;
+}
+.h1-base {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: rem(24);
+  .h1-base-text-underline {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 110%;
+      max-width: 360px;
+      height: 2px;
+      background-color: #592c82;
+    }
+  }
+}
+.h2-base {
+  font-size: rem(24);
+  color: #272727;
+  text-transform: uppercase;
+}
+p {
+  margin: 0;
+}
+label {
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  transition: color $base-duration $base-timing;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

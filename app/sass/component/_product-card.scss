@@ -1,0 +1,91 @@
+.base-product-card {
+  position: relative;
+}
+.base-product-card-inner {
+  display: block;
+  &:focus {
+    outline: none;
+  }
+}
+.base-product-card-badge {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  display: block;
+  color: #fff;
+  padding: 9px 16px 5px 16px;
+  line-height: 1;
+  font-size: rem(24);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.base-product-card-badge--hit {
+  background-color: #c0a7d7;
+}
+.base-product-card-badge--new {
+  background-color: #ff3a98;
+}
+.base-product-card-img {
+  padding-top: 106%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 24px;
+}
+.base-product-card-img--border {
+  border: 1px solid #bfbfbf;
+}
+.base-product-card-desc {
+  color: #2c2c2c;
+  font-size: rem(14);
+  margin-bottom: 14px;
+}
+.base-product-card-cost {
+  display: block;
+  font-size: rem(24);
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+  .rub {
+    font-weight: normal;
+  }
+}
+.base-product-card-bonus {
+  display: inline-block;
+  background-color: #c0a7d7;
+  padding: 0 5px;
+  font-size: rem(12);
+  color: #fff;
+}
+.base-product-card-bonus-cost {
+  font-size: rem(18);
+}
+
+.btn--favorites {
+  position: absolute;
+  top: 4px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../images/dest/icons/heart.png');
+  z-index: 2;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.btn--basket {
+  position: absolute;
+  bottom: 0;
+  right: 4px;
+  width: 42px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../images/dest/icons/bag.png');
+  z-index: 2;
+  &:hover {
+    opacity: 0.8;
+  }
+}
