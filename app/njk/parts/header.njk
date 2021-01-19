@@ -6,14 +6,21 @@
   </div>
   <div class="main-header-top-wrapper">
     <ul class="main-header-top container">
-      <li class="main-header-top-item"><button class="main-header-top-item-dropdown">Москва</button></li>
-      <li class="main-header-top-item"><a href="#" >Магазины</a></li>
-      <li class="main-header-top-item"><span ><a href="tel:+7(495)777-17-39">+7 (495)777-17-39</a>, пн-пт с 9:00 до 18:00</span></li>
+      <li class="main-header-top-item">
+        <button class="main-header-top-item-dropdown">Москва</button>
+      </li>
+      <li class="main-header-top-item">
+        <a href="#">Магазины</a>
+      </li>
+      <li class="main-header-top-item">
+        <span >
+          <a href="tel:+7(495)777-17-39">+7 (495)777-17-39</a>, пн-пт с 9:00 до 18:00</span></li>
       <li class="main-header-top-item">
         <a href="mailto:name@email.com">
-          Написать нам 
+          Написать нам
           <img src="./images/dest/icons/email.png" alt="mail" class="main-header-top-item-icon">
-          </a></li>
+        </a>
+      </li>
       <li class="main-header-top-item">
         <label>
           <span class="visually-hidden">Поиск</span>
@@ -22,43 +29,69 @@
         </label>
       </li>
       <li class="main-header-top-item">
-       <button>
-        Войти или Зарегистрироваться
-        <img src="./images/dest/icons/user.png" alt="user" class="main-header-top-item-icon">
-       </button>
+        <button>
+          Войти или Зарегистрироваться
+          <img src="./images/dest/icons/user.png" alt="user" class="main-header-top-item-icon">
+        </button>
       </li>
     </ul>
   </div>
   <div class="main-header-bottom-wrapper">
     <div class="main-header-bottom container">
-    <nav class="main-header-bottom-nav">
+      <nav class="main-header-bottom-nav">
         <a href="#" class="main-header-logo">
           <span class="visually-hidden">Аравия</span>
           <img src="./images/dest/icons/mainLogo.png" alt="logo" class="">
         </a>
-        <a href="#" class="main-header-bottom-item active">
-          Уход <br>
-          за лицом
-        </a>
-        <a href="#" class="main-header-bottom-item">
-          Уход <br>
-          за телом
-        </a>
-        <a href="#" class="main-header-bottom-item">
-          депиляция
-        </a>
-        <a href="#" class="main-header-bottom-item">
-        Маникюр <br> и педикюр
-        </a>
-        <a href="#" class="main-header-bottom-item">
-        наборы
-        </a>
-        <a href="#" class="main-header-bottom-item">
-          Аксессуары
-        </a>
-        <a href="#" class="main-header-bottom-item">
-          Бренды
-        </a>
+        <div href="#" class="main-header-bottom-item active">
+          <a href="#">
+            Уход
+            <br>за лицом
+          </a>
+          <div class="main-header-submenu main-header-submenu--face">
+            {% include "./submenu_face.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">Уход
+            <br>
+            за телом</a>
+          <div class="main-header-submenu main-header-submenu--face">
+            {% include "./submenu_body.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">депиляция</a>
+          <div class="main-header-submenu main-header-submenu--depilation">
+            {% include "./submenu_depilation.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">Маникюр
+            <br>
+            и педикюр</a>
+          <div class="main-header-submenu main-header-submenu--depilation">
+            {% include "./submenu_manicure.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">наборы</a>
+          <div class="main-header-submenu main-header-submenu--sets">
+            {% include "./submenu_sets.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">Аксессуары</a>
+          <div class="main-header-submenu main-header-submenu--accessories">
+            {% include "./submenu_accessories.njk" %}
+          </div>
+        </div>
+        <div class="main-header-bottom-item">
+          <a href="#">Бренды</a>
+          <div class="main-header-submenu main-header-submenu--brands">
+            {% include "./submenu_brands.njk" %}
+          </div>
+        </div>
       </nav>
       <div class="main-header-bottom-right">
         <button class="main-header-bottom-btn">

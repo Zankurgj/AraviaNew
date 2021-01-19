@@ -1,6 +1,18 @@
 .base-product-card {
   position: relative;
 }
+.base-product-card--catalog {
+  padding: 20px;
+  border: 1px solid transparent;
+  transition: border-color $base-duration $base-timing;
+  &:hover {
+    border-color: #b4b4b4;
+  }
+  .btn--basket {
+    right: 20px;
+    bottom: 20px;
+  }
+}
 .base-product-card-inner {
   display: block;
   &:focus {
@@ -69,10 +81,13 @@
   height: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../images/dest/icons/heart.png');
+  background-image: url('../images/dest/icons/heart1.png');
   z-index: 2;
   &:hover {
     opacity: 0.8;
+  }
+  &.active {
+    background-image: url('../images/dest/icons/heart-full.png');
   }
 }
 .btn--basket {
@@ -83,9 +98,68 @@
   height: 42px;
   background-repeat: no-repeat;
   background-position: center;
-  background-image: url('../images/dest/icons/bag.png');
+  background-image: url('../images/dest/icons/bag1.png');
   z-index: 2;
   &:hover {
     opacity: 0.8;
   }
+  &.active {
+    background-image: url('../images/dest/icons/bag-full.png');
+  }
+}
+.base-product-card--small {
+  .base-product-card-desc {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+  .base-product-card-cost-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+  .base-product-card-cost {
+    font-size: 14px;
+    margin-right: 6px;
+  }
+  .base-product-card-img {
+    margin-bottom: 12px;
+  }
+  .base-product-card-badge {
+    font-size: 19px;
+  }
+  .base-product-card-bonus {
+    font-size: 13px;
+  }
+  .base-product-card-bonus-cost {
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+
+.base-product-card-stars {
+  display: flex;
+  justify-content: center;
+}
+.base-product-card-category-name {
+  text-align: center;
+  color: #2c2c2c;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.base-product-card-star {
+  flex: 0 0 auto;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+}
+.base-product-card-star--full {
+  background-image: url('../images/dest/icons/star.png');
+}
+.base-product-card-star-empty {
+  background-image: url('../images/dest/icons/star-empty.png');
+}
+.base-product-card-category {
+  font-size: 14px;
+  color: #592c82;
 }

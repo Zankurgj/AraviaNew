@@ -1,0 +1,395 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="category-head">
+    <div class="container">
+      <div class="row row--category-head">
+        <div class="category-head-col category-head-col--spoiler">
+          <div class="category-head-content"></div>
+          <div class="category-spoiler-wrapper">
+            <button class="category-spoiler-btn opened" onclick="onSpoilerCatagoryToogle(this)">Салон</button>
+            <ul class="category-spoiler-list opened">
+              {% set headSpilerListSalon = [
+                ['Очищение'],
+                ['Специальный уход'],
+                ['Маски '],
+                ['Уход после интенсивных процедур'],
+                ['Демакияж'],
+                ['Тонизирование'],
+                ['Сыворотки'],
+                ['Массаж лица'],
+                ['Гигиеническая чистка']
+              ] %}
+              {% for item in headSpilerListSalon %}
+                <li>
+                  <a href="#" class="category-spoiler-list-item">{{item}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="category-spoiler-wrapper">
+            <button class="category-spoiler-btn" onclick="onSpoilerCatagoryToogle(this)">Домашний уход</button>
+            <ul class="category-spoiler-list">
+              {% set headSpilerListHome = [
+                ['Очищение'],
+                ['Специальный уход'],
+                ['Маски '],
+                ['Уход после интенсивных процедур'],
+                ['Демакияж'],
+                ['Тонизирование'],
+                ['Сыворотки'],
+                ['Массаж лица'],
+                ['Гигиеническая чистка']
+              ] %}
+              {% for item in headSpilerListHome %}
+                <li>
+                  <a href="#" class="category-spoiler-list-item">{{item}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <a href="#" class="category-spoiler-list-item category-spoiler-list-item--bottom">Все продукты для лица</a>
+        </div>
+
+        <div class="category-head-col category-head-col--img">
+          <img src="./images/dest/img/AdobeStock_218006682.png" alt="Продукция" class="category-head-img category-head-img--right">
+          <img src="./images/dest/img/DSC_63631.png" alt="Продукция" class="category-head-img category-head-img--left">
+        </div>
+
+        <div class="category-head-col category-head-col--description">
+          <p class="category-head-title">
+            УХОД
+            <br>
+            ЗА ЛИЦОМ
+          </p>
+          <p class="category-head-text">
+            Линия косметических средств ARAVIA Professional для лица основана на синергии инновационных технологий и классической косметологии. Действие направлено на решение всех основных проблем кожи лица, шеи и декольте.
+          </p>
+          <p class="category-head-text">
+            Линия идеально подойдет как для классических, так и для аппаратных процедур, сочетается с различными массажными методиками.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-product-promo">
+    <div class="container">
+      {% include "app/njk/parts/promo_product_block.njk" %}
+    </div>
+  </section>
+
+  <section class="category-services-promo">
+    <div class="container">
+      <div class="services-slider-wrapper">
+        <button class="slider-arrow slider-arrow--prew slider-arrow--category-prew">
+          <span class="visually-hidden">Назад</span>
+        </button>
+
+        <div class="services-slider">
+          {% for i in range(0, 2) %}
+            <div class="services-slide">
+              <div class="row row--services-slide">
+                <div class="col-services-slide">
+                  <div class="services-item-wrapper">
+
+                    <div class="services-item-col services-item-col--big">
+                      <div class="services-item" style="background-image: url('./images/dest/img/IMG_9450.png');">
+                        <p class="services-item-name services-item-name--right">очищение</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Очищение</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на проблемы кожи лица. Формулы средств насыщены компонентами, улучшающими состояние кожи.
+                          </p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="services-item-col services-item-col--small">
+                      <div class="services-item" style="background-image: url('./images/dest/img/DSC_4177.png');">
+                        <p class="services-item-name services-item-name--right">Специальный
+                          <br>
+                          уход</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Специальный уход</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на пр облемы кожи лица. Формулы средств насыщены компонентами, ющими состояние кожи</p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="services-item-wrapper">
+
+                    <div class="services-item-col services-item-col--small">
+                      <div class="services-item" style="background-image: url('./images/dest/img/IMG_4889.png');">
+                        <p class="services-item-name services-item-name--left">сыворотки</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Специальный уход</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на пр облемы кожи лица. Формулы средств насыщены компонентами, ющими состояние кожи</p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="services-item-col services-item-col--big">
+                      <div class="services-item" style="background-image: url('./images/dest/img/DSC_2893.png');">
+                        <p class="services-item-name services-item-name--left">Пилинги</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Очищение</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на проблемы кожи лица. Формулы средств насыщены компонентами, улучшающими состояние кожи.
+                          </p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-services-slide">
+                  <div class="services-item-wrapper">
+
+                    <div class="services-item-col services-item-col--big">
+                      <div class="services-item" style="background-image: url('./images/dest/img/DSC_6689.png');">
+                        <p class="services-item-name services-item-name--right">домашний
+                          <br>
+                          уход</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Очищение</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на проблемы кожи лица. Формулы средств насыщены компонентами, улучшающими состояние кожи.
+                          </p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="services-item-col services-item-col--small">
+                      <div class="services-item" style="background-image: url('./images/dest/img/DSC_5019.png');">
+                        <p class="services-item-name services-item-name--right">маски</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Специальный уход</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на пр облемы кожи лица. Формулы средств насыщены компонентами, ющими состояние кожи</p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="services-item-wrapper">
+
+                    <div class="services-item-col services-item-col--small">
+                      <div class="services-item" style="background-image: url('./images/dest/img/IMG_9397.png');">
+                        <p class="services-item-name services-item-name--left">демакияж</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Специальный уход</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на пр облемы кожи лица. Формулы средств насыщены компонентами, ющими состояние кожи</p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="services-item-col services-item-col--big">
+                      <div class="services-item" style="background-image: url('./images/dest/img/DSC_8662.png');">
+                        <p class="services-item-name services-item-name--left">уход после интенсивных процедур</p>
+                        <div class="services-item-text-inner">
+                          <p class="services-item-text-title">Очищение</p>
+                          <p class="services-item-text-desc">Трехэтапный уход для комплексного воздействия на проблемы кожи лица. Формулы средств насыщены компонентами, улучшающими состояние кожи.
+                          </p>
+                          <a href="#" class="services-item-text-link">В каталог</a>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <button class="slider-arrow slider-arrow--next slider-arrow--category-next">
+          <span class="visually-hidden">Вперед</span>
+        </button>
+      </div>
+      <a href="#" class="btn btn-link-underline--big btn--category-services-promo">Все продукты для лица</a>
+    </div>
+  </section>
+  <section class="category-features">
+    <div class="container container--category-features">
+      <div class="row">
+        <div class="category-features-col--text">
+          <div class="category-features-text-inner">
+            <p class="category-features-title">Must-have</p>
+            <p class="category-features-text">
+              Освежающий тонер для лица на основе гидролатов цветов подходит для всех типов кожи. Обладает антиоксидантным действием, борется со свободными радикалами, препятствует преждевременному старению, укрепляет сосуды, предотвращает появление купероза, улучшает цвет лица. Тонер придает коже чувство чистоты и свежести, устраняет жирный блеск
+            </p>
+          </div>
+          <div class="category-features-product">
+            <div class="category-features-product-img">
+              <img src="./images/dest/img/9102.png" alt="Продукт">
+            </div>
+            <div class="category-features-product-inner">
+              <p class="category-features-product-text">Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл, ARAVIA Professional</p>
+              <div class="category-features-product-cost">
+                <span class="base-product-card-cost">1 633
+                  <span class="rub">i</span></span>
+                <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">1219<span class="rub">i</span>
+                  </span>
+                  с бонусами</span>
+              </div>
+              <a href="#" class="btn btn-main">Купить сейчас</a>
+            </div>
+          </div>
+        </div>
+        <div class="category-features-col--img">
+          <img src="./images/dest/img/IMG_9425.png" alt="продукт">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="category-services-offer">
+    <h1 class="h1-base h1-base--services-offer text-center">
+      <span class="h1-base-text-underline">комплексный уход</span>
+    </h1>
+    <div class="container">
+      <div class="services-offer-slider-wrapper">
+        <button class="slider-arrow slider-arrow--prew slider-arrow--offer-prew">
+          <span class="visually-hidden">Назад</span>
+        </button>
+        <div class="services-offer-slider">
+          {% set sliderOffer = [
+            [
+              'Первые признаки старения', 'DSC_0638.png'
+            ],
+            [
+              'Совершенство кожи', 'DSC_0643.png'
+            ],
+            [
+              'Глобальное омоложение', 'DSC_0679.png'
+            ],
+            [
+              'Сияние кожи', 'DSC_0656.png'
+            ],
+            [
+              'Антивозрастной уход', 'DSC_0632.png'
+            ],
+            [
+              'Первые признаки старения', 'DSC_0638.png'
+            ],
+            [
+              'Совершенство кожи', 'DSC_0643.png'
+            ],
+            [
+              'Глобальное омоложение', 'DSC_0679.png'
+            ],
+            [
+              'Сияние кожи', 'DSC_0656.png'
+            ],
+            [
+              'Антивозрастной уход', 'DSC_0632.png'
+            ]
+          ] %}
+          {% for title, img in sliderOffer %}
+            <a href="#" class="services-offer-slide">
+              <div class="services-offer-slide-img" style="background-image: url('./images/dest/img/{{img}}');"></div>
+              <p class="services-offer-slide-text">{{title}}</p>
+            </a>
+          {% endfor %}
+        </div>
+        <button class="slider-arrow slider-arrow--next slider-arrow--offer-next">
+          <span class="visually-hidden">Вперед</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="category-services-stock">
+    <h1 class="h1-base h1-base--services-stock text-center">
+      <span class="h1-base-text-underline">акции</span>
+    </h1>
+    <div class="container container--category-services">
+      <div class="row">
+        {% set servicesStock = [['Sstock1.png'], ['Sstock2.png'], ['Sstock3.png']] %}
+        {% for item in servicesStock %}
+          <div class="services-stock-col">
+            <div class="services-stock-item">
+              <div class="services-stock-item-img" style="background-image: url('./images/dest/img/{{item}}');"></div>
+              <div class="services-stock-item-btns">
+                <a href="#" class="btn btn-main btn--services-stock">Узнать больше</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <h1 class="h1-promo-title-big h1-base-services--stock-title">
+      Все продукты ухода за лицом
+    </h1>
+    <a href="#" class="btn btn-main btn--services-stock-title">За покупками</a>
+  </section>
+  <section class="category-choice">
+    <div class="container">
+      <h1 class="h1-base h1-base--main-social text-center">
+        <span class="h1-base-text-underline ">выбор покупателей</span></h1>
+      {% include "app/njk/parts/choice_block.njk" %}
+    </div>
+  </section>
+  <section class="category-feature">
+    <h1 class="h1-base h1-base--category-feature text-center">
+      <span class="h1-base-text-underline ">наши преимущества</span></h1>
+    <div class="container">
+      <div class="main-feature-inner row row--wrap">
+        {% set featureItems = [
+          {
+            title: 'самый </br> полный </br> ассортимент',
+            img: 'cosmetics.png'
+          }, {
+            title: 'доставка </br> по России',
+            img: 'truckn.png'
+          }, {
+            title: 'эксклюзивы </br> aravia',
+            img: 'crown.png'
+          }, {
+            title: 'Программа </br> лояльности',
+            img: 'money.png'
+          }, {
+            title: 'безопасные </br> платежи',
+            img: 'safe.png'
+          }
+        ]
+ %}
+        {% for item in featureItems %}
+          <div class="main-feature-col">
+            <div class="main-feature-item">
+              <div class="main-feature-item-icon">
+                <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+              </div>
+              <p class="main-feature-item-text">
+                {{item.title | safe }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="online-block">
+    <div class="container">
+      <div class="online-block-title-wrapper">
+        <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row row--wrap">
+        {% for i in range(0, 5) %}
+          <div class="online-block-col">
+            {% from "app/njk/macro.njk" import productCardSmall %}
+            {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="category-mail">
+    {% include "app/njk/parts/mail_block.njk" %}
+  </section>
+{% endblock %}

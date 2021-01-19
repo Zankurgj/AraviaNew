@@ -10,33 +10,46 @@
       </button>
     </div>
     <div class="main-slider" id="mainSlider">
-        {% for i in range(0, 4) %}
-          <a href="#" class="main-slider-slide" style="background-image: url('/images/dest/img/mainSlide.jpg');">
-            <div class="main-slider-slide-inner container">
-                <p class="main-slider-slide-title">Дарим Подарки</p>
-                <p class="main-slider-slide-text">
-                  при покупке продукции для ухода <br>
-                  за кожей лица ARAVIA Professional <br>
-                  на сумму от 4 000<span class="rub">i</span>
-                </p>
-                <span class="main-slider-slide-btn">Получить подарок</span>
-              </div>
-          </a>
-        {% endfor %}
-      </div>
+      {% for i in range(0, 4) %}
+        <a href="#" class="main-slider-slide" style="background-image: url('/images/dest/img/mainSlide.jpg');">
+          <div class="main-slider-slide-inner container">
+            <p class="main-slider-slide-title">Дарим Подарки</p>
+            <p class="main-slider-slide-text">
+              при покупке продукции для ухода
+              <br>
+              за кожей лица ARAVIA Professional
+              <br>
+              на сумму от 4 000<span class="rub">i</span>
+            </p>
+            <span class="main-slider-slide-btn">Получить подарок</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
   </section>
 
   <section class="main-feature">
     <div class="container">
       <div class="main-feature-inner row row--wrap">
         {% set featureItems = [
-          {title: 'собственные </br> обучающие </br> студии', img:'certificate.png'},
-          {title:'доставка </br> по России', img:'truck.png'},
-          {title:'консультация </br> эксперта', img:'service.png'},
-          {title:'Программа </br> лояльности', img:'money.png'},
-          {title:'безопасные </br> платежи', img:'safe.png'}
-          ] 
-        %}
+          {
+            title: 'собственные </br> обучающие </br> студии',
+            img: 'certificate.png'
+          }, {
+            title: 'доставка </br> по России',
+            img: 'truck.png'
+          }, {
+            title: 'консультация </br> эксперта',
+            img: 'service.png'
+          }, {
+            title: 'Программа </br> лояльности',
+            img: 'money.png'
+          }, {
+            title: 'безопасные </br> платежи',
+            img: 'safe.png'
+          }
+        ]
+ %}
         {% for item in featureItems %}
           <div class="main-feature-col">
             {% if loop.index === 2 %}
@@ -44,131 +57,63 @@
                 <div class="tooltip tooltip--main-feature">
                   <p>ВНИМАНИЕ! При доставке курьером заказ можно оплатить только наличными, при самовывозе – наличными или картой, при доставке почтой – предоплата 100%</p>
                 </div>
-            {% else %}
-              <div class="main-feature-item">
-            {% endif %} 
-              <div class="main-feature-item-icon">
-                <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+              {% else %}
+                <div class="main-feature-item">
+                {% endif %}
+                <div class="main-feature-item-icon">
+                  <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+                </div>
+                <p class="main-feature-item-text">
+                  {{item.title | safe }}
+                </p>
               </div>
-              <p class="main-feature-item-text">
-                {{item.title | safe }}
-              </p>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  <section class="main-product">
-    <div class="container">
-      <div class="main-product-nav">
-        {% set productNavItem = [['Хиты продаж', '#productTab1'],['Новинки', '#productTab2'], ['специальные цены', '#productTab3']]%}
-        {% for item, tabId in productNavItem %}
-          <label class="main-product-nav-item">
-            {% if loop.index === 1 %}
-              <input type="radio" name="product-nav" checked onchange="onShowTab(this , '{{tabId}}')">
-            {% else %}
-              <input type="radio" name="product-nav" onchange="onShowTab(this , '{{tabId}}')">
-            {% endif %}
-            <span class="main-product-nav-text">{{item}}</span>
-          </label>
-        {% endfor %}
-      </div>
-      <div class="main-product-tabs">
-        <div class="main-product-tab tab-item tab-item--show" id="productTab1" data-tab-name="product-nav">
-
-          <article class="slider-product-wrapper">
-            <button class="slider-arrow slider-arrow--prew slider-arrow--product-prew">
-              <span class="visually-hidden">Назад</span>
-            </button>
-
-            <div class="slider-product" id="productSlider">
-              {% for i in range(0, 7) %}
-                <div class="slider-product-slide-wrapper">
-                  {% from "app/njk/macro.njk" import productCard %}
-                  {{ productCard(true,'./images/dest/img/sliderProduct.png', 'hit') }}
-                </div>
-              {% endfor %}
-            </div>
-            <button class="slider-arrow slider-arrow--next slider-arrow--product-next">
-              <span class="visually-hidden">Вперед</span>
-            </button>
-          </article>
-
-        </div>
-        <div class="main-product-tab tab-item" id="productTab2" data-tab-name="product-nav">
-          <article class="slider-product-wrapper">
-            <button class="slider-arrow slider-arrow--prew slider-arrow--product-new-prew">
-              <span class="visually-hidden">Назад</span>
-            </button>
-            <div class="slider-product" id="productSliderNew">
-              {% for i in range(0, 7) %}
-                <div class="slider-product-slide-wrapper">
-                  {% from "app/njk/macro.njk" import productCard %}
-                  {{ productCard(true, './images/dest/img/product2.png', 'new') }}
-                </div>
-              {% endfor %}
-            </div>
-            <button class="slider-arrow slider-arrow--next slider-arrow--product-new-next">
-              <span class="visually-hidden">Вперед</span>
-            </button>
-          </article>
-        </div>
-        <div class="main-product-tab tab-item" id="productTab3" data-tab-name="product-nav">
-          <article class="slider-product-wrapper">
-            <button class="slider-arrow slider-arrow--prew slider-arrow--product-special-prew">
-              <span class="visually-hidden">Назад</span>
-            </button>
-            <div class="slider-product" id="productSliderSpecial">
-              {% for i in range(0, 7) %}
-                <div class="slider-product-slide-wrapper">
-                  {% from "app/njk/macro.njk" import productCard %}
-                  {{ productCard(true, './images/dest/img/product3.png') }}
-                </div>
-              {% endfor %}
-            </div>
-            <button class="slider-arrow slider-arrow--next slider-arrow--product-special-next">
-              <span class="visually-hidden">Вперед</span>
-            </button>
-          </article>
+          {% endfor %}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="main-promo">
-    <div class="container">
-      <div class="main-product-nav">
-        {% set productNavItem = [['Акции ', '#promoTab1'],['рекомендации эксперта', '#promoTab2'], ['видеообзоры', '#promoTab3']]%}
-        {% for item, tabId in productNavItem %}
-          <label class="main-product-nav-item">
-            {% if loop.index === 1 %}
-              <input type="radio" name="promo-nav" checked onchange="onShowTab(this , '{{tabId}}')">
-            {% else %}
-              <input type="radio" name="promo-nav" onchange="onShowTab(this , '{{tabId}}')">
-            {% endif %}
-            <span class="main-product-nav-text">{{item}}</span>
-          </label>
-        {% endfor %}
+    <section class="main-product">
+      <div class="container">
+        {% include "app/njk/parts/promo_product_block.njk" %}
       </div>
-      <div class="main-promo-tabs">
-        <div class="main-promo-tab tab-item tab-item--show" id="promoTab1" data-tab-name="promo-nav">
-          <div class="main-promo-stock">
+    </section>
+
+    <section class="main-promo">
+      <div class="container">
+        <div class="main-product-nav">
+          {% set productNavItem = [['Акции ', '#promoTab1'],['рекомендации эксперта', '#promoTab2'], ['видеообзоры', '#promoTab3']]%}
+          {% for item, tabId in productNavItem %}
+            <label class="main-product-nav-item">
+              {% if loop.index === 1 %}
+                <input type="radio" name="promo-nav" checked="checked" onchange="onShowTab(this , '{{tabId}}')">
+              {% else %}
+                <input type="radio" name="promo-nav" onchange="onShowTab(this , '{{tabId}}')">
+              {% endif %}
+              <span class="main-product-nav-text">{{item}}</span>
+            </label>
+          {% endfor %}
+        </div>
+        <div class="main-promo-tabs">
+          <div class="main-promo-tab tab-item tab-item--show" id="promoTab1" data-tab-name="promo-nav">
+            <div class="main-promo-stock">
               <div class="row row--wrap">
                 <div class="main-promo-stock-col2 row--wrap">
                   <div class="main-promo-stock-col2">
-                    <div class="main-promo-stock-item main-promo-stock-item-col2" style="background-image: url('/images/dest/img/stock1.png');">
-                    </div>
+                    <div class="main-promo-stock-item main-promo-stock-item-col2" style="background-image: url('/images/dest/img/stock1.png');"></div>
                   </div>
 
                   <div class="main-promo-stock-col2">
                     <div class="main-promo-stock-item main-promo-stock-item-col2">
                       <div class="main-promo-stock-item-inner main-promo-stock-item-2">
-                          <p class="promo-stock-item-title-thin">только в феврале</p>
-                          <p class="promo-stock-item-text">Выбирайте <br> Подарки</p>
-                          <p class="promo-stock-item-text-thin">на 10% <br> от суммы покупки</p>
-                          <a href="#" class="promo-stock-item-link">в каталог</a>
+                        <p class="promo-stock-item-title-thin">только в феврале</p>
+                        <p class="promo-stock-item-text">Выбирайте
+                          <br>
+                          Подарки</p>
+                        <p class="promo-stock-item-text-thin">на 10%
+                          <br>
+                          от суммы покупки</p>
+                        <a href="#" class="promo-stock-item-link">в каталог</a>
                       </div>
                     </div>
                   </div>
@@ -176,9 +121,12 @@
                   <div class="main-promo-stock-col1">
                     <div class="main-promo-stock-item main-promo-stock-item-col1" style="background-image: url('/images/dest/img/stock2.png');">
                       <div class="main-promo-stock-item-inner main-promo-stock-item-3">
-                          <p class="promo-stock-item-title">5+1</p>
-                          <p class="promo-stock-item-text"> шестое средство <br> для лица в подарок</p>
-                          <a href="#" class="promo-stock-item-link promo-stock-item-link--dark">в каталог</a>
+                        <p class="promo-stock-item-title">5+1</p>
+                        <p class="promo-stock-item-text">
+                          шестое средство
+                          <br>
+                          для лица в подарок</p>
+                        <a href="#" class="promo-stock-item-link promo-stock-item-link--dark">в каталог</a>
                       </div>
                     </div>
                   </div>
@@ -188,41 +136,45 @@
                   <div class="main-promo-stock-item main-promo-stock-item-col1" style="background-image: url('/images/dest/img/stock3.png');">
                     <div class="main-promo-stock-item-inner main-promo-stock-item-4">
                       <p class="promo-stock-item-title">дарим скраб</p>
-                      <p class="promo-stock-item-text"> шестое средство <br> для лица в подарок</p>
+                      <p class="promo-stock-item-text">
+                        шестое средство
+                        <br>
+                        для лица в подарок</p>
                       <a href="#" class="promo-stock-item-link promo-stock-item-link--dark">в каталог</a>
                     </div>
                   </div>
                 </div>
 
               </div>
-          </div>
-        </div>
-        <div class="main-promo-tab tab-item" id="promoTab2" data-tab-name="promo-nav">2</div>
-        <div class="main-promo-tab tab-item" id="promoTab3" data-tab-name="promo-nav">3</div>
-      </div>
-    </div>
-  </section>
-  <section class="main-services">
-    <div class="container">
-      <h1 class="h1-base h1-base--main-services text-center"><span class="h1-base-text-underline">откройте для себя мир красоты</span></h1>
-      <div class="main-services-inner row row--wrap">
-        {% set servicesItem = [['лицо ', 'services1.png'],['депиляция', 'services2.png'], ['тело', 'services3.png'], ['маникюр/педикюр', 'services4.png']]%}
-        {% for title, img in servicesItem %}
-          <div class="main-services-col">
-            <div class="main-services-item">
-              <div class="main-services-item-img" style="background-image: url('/images/dest/img/{{img}}');">
-              </div>
-              <p class="main-services-item-title">{{title}}</p>
-              <a href="#" class="main-services-item-link">начать покупки</a>
             </div>
           </div>
-        {% endfor %}
+          <div class="main-promo-tab tab-item" id="promoTab2" data-tab-name="promo-nav">2</div>
+          <div class="main-promo-tab tab-item" id="promoTab3" data-tab-name="promo-nav">3</div>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="main-present">
-    <div class="container">
-        <h1 class="h1-base h1-base--main-present text-center"><span class="h1-base-text-underline">подарочные наборы по специальной цене</span></h1>
+    </section>
+    <section class="main-services">
+      <div class="container">
+        <h1 class="h1-base h1-base--main-services text-center">
+          <span class="h1-base-text-underline">откройте для себя мир красоты</span></h1>
+        <div class="main-services-inner row row--wrap">
+          {% set servicesItem = [['лицо ', 'services1.png'],['депиляция', 'services2.png'], ['тело', 'services3.png'], ['маникюр/педикюр', 'services4.png']]%}
+          {% for title, img in servicesItem %}
+            <div class="main-services-col">
+              <div class="main-services-item">
+                <div class="main-services-item-img" style="background-image: url('/images/dest/img/{{img}}');"></div>
+                <p class="main-services-item-title">{{title}}</p>
+                <a href="#" class="main-services-item-link">начать покупки</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <section class="main-present">
+      <div class="container">
+        <h1 class="h1-base h1-base--main-present text-center">
+          <span class="h1-base-text-underline">подарочные наборы по специальной цене</span></h1>
         <div class="main-present-inner row row--wrapp">
           {% for i in range(0, 3) %}
             <div class="main-present-col">
@@ -231,11 +183,12 @@
             </div>
           {% endfor %}
         </div>
-    </div>
-  </section>
-  <section class="main-brands">
-    <div class="container">
-        <h1 class="h1-base h1-base--main-brands text-center"><span class="h1-base-text-underline">наши бренды</span></h1>
+      </div>
+    </section>
+    <section class="main-brands">
+      <div class="container">
+        <h1 class="h1-base h1-base--main-brands text-center">
+          <span class="h1-base-text-underline">наши бренды</span></h1>
         <div class="main-brands-inner row row--wrapp">
           {% set brandItems = [['brand1.png '],['brand2.png'],['brand3.png'],['brand4.png'],['brand5.png']]%}
           {% for brand in brandItems %}
@@ -244,146 +197,74 @@
             </div>
           {% endfor %}
         </div>
-    </div>
-  </section>
-  <section class="main-social">
-    <div class="container">
-        <h1 class="h1-base h1-base--main-social text-center"><span class="h1-base-text-underline">выбор покупателей</span></h1>
-        <div class="main-social-slider-wrapper">
-          <button class="slider-arrow slider-arrow--prew slider-arrow--social-prew">
-              <span class="visually-hidden">Назад</span>
-            </button>
-            <button class="slider-arrow slider-arrow--next slider-arrow--social-next">
-              <span class="visually-hidden">Вперед</span>
-            </button>
-          <div class="main-social-slider" id="socialSlider">
-            {% for i in range(0, 3) %}
-                <div class="slide-social">
-                  <div class="main-social-inner row row--wrapp">
-          <div class="main-social-col main-social--col2">
-            <div class="main-social-col main-social--col2">
-              <div class="main-social-item" style="background-image: url('/images/dest/img/social1.png');">
-                <div class="main-social-item-like main-social-item-like--bottom">
-                  <span>1542</span>
-                  <img class="main-social-item-like-icon" src="./images/dest/icons/heart-small.png" alt="Лайк">
-                </div>
-              </div>
-            </div>
-            <div class="main-social-col main-social--col2"><div class="main-social-item"><div class="main-social-item-inner">
-              <img class="main-social-item-icon" src="./images/dest/icons/inst.png" alt="Иконка инстаграм">
-              <p class="main-social-item-text">
-                делись отзывами <br>
-                на любимые средства</p>
-              <p class="main-social-item-tag">#явыбираюaravia</p>
-            </div></div></div>
-            <div class="main-social-col main-social--col2"><div class="main-social-item"><div class="main-social-item-inner">
-              <p class="main-social-item-text">
-                читай отзывы <br>
-                блогеров
-              </p>
-              <p class="main-social-item-tag">#araviaprofessional</p>
-            </div></div></div>
-            <div class="main-social-col main-social--col2">
-              <div class="main-social-item" style="background-image: url('/images/dest/img/social2.png');">
-                <div class="main-social-item-like main-social-item-like--bottom">
-                  <span>1542</span>
-                  <img class="main-social-item-like-icon" src="./images/dest/icons/heart-small.png" alt="Лайк">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="main-social-col main-social--col2">
-            <div class="main-social-col main-social--col1"><div class="main-social-item" style="background-image: url('/images/dest/img/social3.png');"><div class="main-social-item-like main-social-item-like--top">
-                  <span>1542</span>
-                  <img class="main-social-item-like-icon" src="./images/dest/icons/heart-small.png" alt="Лайк">
-                </div></div></div>
-          </div>
-        </div>
-                </div>
-              {% endfor %}
-          </div>
-        </div>
-        <h1 class="h1-base h1-base--main-social text-center"><span class="h1-base-text-underline">найти ближайший магазин</span></h1>
-    </div>
-  </section>
-  <section class="main-location">
-    <div class="container">
-      <div class="row">
-        <form class="main-location-form">
+      </div>
+    </section>
+    <section class="main-social">
+      <div class="container">
+        <h1 class="h1-base h1-base--main-social text-center">
+          <span class="h1-base-text-underline">выбор покупателей</span></h1>
+        {% include "app/njk/parts/choice_block.njk" %}
+        <h1 class="h1-base h1-base--main-social text-center">
+          <span class="h1-base-text-underline">найти ближайший магазин</span></h1>
+      </div>
+    </section>
+    <section class="main-location">
+      <div class="container">
+        <div class="row">
+          <form class="main-location-form">
             <h2 class="h2-base main-location-h2">НАЙДИТЕ БЛИЖАЙШИЙ МАГАЗИН aravia</h2>
             <p class="base-text main-location-text">
-              Если вы хотите получить консультацию по уходу или какому-либо из наших 
-              продуктов, мы с радостью поможем вам. Приходите в любой центр ARAVIA. 
-              Наши консультанты постараются ответить на все ваши вопросы
+              Если вы хотите получить консультацию по уходу или какому-либо из наших продуктов, мы с радостью поможем вам. Приходите в любой центр ARAVIA. Наши консультанты постараются ответить на все ваши вопросы
             </p>
             <label class="main-location-input-wrapper">
               <h2 class="h2-base main-location-h2">ВВЕДИТЕ ВАШ ГОРОД</h2>
               <input type="text" class="base-input" placeholder="Введите название города">
             </label>
             <button class="btn-main btn-main--main-location" type="submit">Найти магазин</button>
-        </form>
-      </div>
-    </div>
-    <div class="main-location-map">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afac7c94ddf01d651715ae3b23a9f7236561ab415e54be543e8681df662789f63&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
-    </div>
-  </section>
-  <section class="main-mail">
-    <div class="container">
-      <form action="" class="main-mail-form">
-        <h1 class="h1-base h1-base--main-mail text-center"><span class="h1-base-text-underline">подпишитесь на рассылку</span></h1>
-        <p class="base-text text-center main-mail-text">Узнавайте первыми о новинках и специальных акциях!</p>
-        <div class="main-mail-form-inner row row--wrap">
-          <label class="main-mail-form-col">
-            <input type="text" class="base-input" placeholder="Адрес электронной почты*" required>
-          </label>
-          <label class="main-mail-form-col">
-            <input type="text" class="base-input" placeholder="Имя*" required>
-          </label>
-          <label class="main-mail-form-col">
-            <input type="text" class="base-input" placeholder="Фамилия" required>
-          </label>
-        </div>
-          <label class="checkbox-wrapper checkbox-wrapper--main-mail">
-            <input type="checkbox" class="checkbox-input">
-            <span class="checkbox"></span>
-            <span class="checkbox-text">Я согласен(а) получать информационную рассылку ARAVIA на адрес моей электронной почты.</span>
-          </label>
-        <button class="btn-main btn-main--main-mail" type="submit">Подписаться</button>
-      </form>
-    </div>
-  </section>
-  <section class="main-training">
-    <div class="container">
-      <div class="row row--wrap">
-        <h1 class="h1-base h1-base--main-training text-center"><span class="h1-base-text-underline">Обучение</span></h1>
-        <div class="main-training-col main-training-col--text">
-          <h2 class="h2-base h2-base--main-training">Обучение в Учебном центре <br>
-  aravia</h2>
-          <p class="base-text base-text--main-training">Учебные центры компании "Аравия" проводят многоуровневое профессиональное обучение специалистов сферы красоты по единым программам. На сегодняшний день авторские методики SPA-шугаринга, парафинотерапии и ухода за телом применяют во многих люксовых и ведущих салонах красоты. </p>
-        </div>
-        <div class="main-training-col main-training-col--img">
-          <img class="main-training-img main-training-img--1" src="./images/dest/img/training1.png" alt="">
+          </form>
         </div>
       </div>
-    </div>
-    <div class="main-training-wrapper">
-       <div class="container">
-      <div class="row row--wrap">
-        <div class="main-training-col main-training-col--text">
-          <p class="base-text base-text--main-training">УЦ «Аравия» -это </p>
-          <p class="base-text base-text--main-training">15 собственных учебных центров по всей России
-  </p>
-          <p class="base-text base-text--main-training">Более 3 000 специалистов индустрии красоты ежегодно в Москве и Санкт-
-  Петербурге , а также 5 000 в регионах России и зарубежья.</p>
-          <p class="base-text base-text--main-training">Авторские методики депиляции, ухода за лицом и телом</p>
-          <a href="#" class="btn btn-main btn-main--main-training">Подробнее</a>
-        </div>
-        <div class="main-training-col main-training-col--img">
-          <img class="main-training-img main-training-img--2" src="./images/dest/img/training2.png" alt="">
+      <div class="main-location-map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afac7c94ddf01d651715ae3b23a9f7236561ab415e54be543e8681df662789f63&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+      </div>
+    </section>
+    <section class="main-mail">
+      {% include "app/njk/parts/mail_block.njk" %}
+    </section>
+    <section class="main-training">
+      <div class="container">
+        <div class="row row--wrap">
+          <h1 class="h1-base h1-base--main-training text-center">
+            <span class="h1-base-text-underline">Обучение</span></h1>
+          <div class="main-training-col main-training-col--text">
+            <h2 class="h2-base h2-base--main-training">Обучение в Учебном центре
+              <br>
+              aravia</h2>
+            <p class="base-text base-text--main-training">Учебные центры компании "Аравия" проводят многоуровневое профессиональное обучение специалистов сферы красоты по единым программам. На сегодняшний день авторские методики SPA-шугаринга, парафинотерапии и ухода за телом применяют во многих люксовых и ведущих салонах красоты.
+            </p>
+          </div>
+          <div class="main-training-col main-training-col--img">
+            <img class="main-training-img main-training-img--1" src="./images/dest/img/training1.png" alt="">
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-  </section>
-{% endblock %}
+      <div class="main-training-wrapper">
+        <div class="container">
+          <div class="row row--wrap">
+            <div class="main-training-col main-training-col--text">
+              <p class="base-text base-text--main-training">УЦ «Аравия» -это
+              </p>
+              <p class="base-text base-text--main-training">15 собственных учебных центров по всей России
+              </p>
+              <p class="base-text base-text--main-training">Более 3 000 специалистов индустрии красоты ежегодно в Москве и Санкт- Петербурге , а также 5 000 в регионах России и зарубежья.</p>
+              <p class="base-text base-text--main-training">Авторские методики депиляции, ухода за лицом и телом</p>
+              <a href="#" class="btn btn-main btn-main--main-training">Подробнее</a>
+            </div>
+            <div class="main-training-col main-training-col--img">
+              <img class="main-training-img main-training-img--2" src="./images/dest/img/training2.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}

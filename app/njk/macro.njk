@@ -2,30 +2,139 @@
       и полисахаридами Anti-Wrinkle Lifting Cream, 
       100 мл, ARAVIA Professional", cost="1 633", discount="1 219") %}
   <div class="base-product-card">
-    <button class="btn--favorites">
+    <button class="btn--favorites" onclick="onAddFavorites(this)">
       <span class="visually-hidden">Добавить в избранное</span>
     </button>
-    <button class="btn--basket">
+    <button class="btn--basket" onclick="onAddBasket(this)">
       <span class="visually-hidden">Добавить в корзину</span>
     </button>
     <a href="#" class="base-product-card-inner">
-      {% if badge==='hit' %}
+      {% if badge === 'hit' %}
         <span class="base-product-card-badge base-product-card-badge--hit">ХИТ</span>
       {% endif %}
-      {% if badge==='new' %}
+      {% if badge === 'new' %}
         <span class="base-product-card-badge base-product-card-badge--new">NEW</span>
       {% endif %}
-      {% if border===true %}
+      {% if border === true %}
         <div class="base-product-card-img base-product-card-img--border" style="background-image: url('{{img}}');">
         {% else %}
-        <div class="base-product-card-img" style="background-image: url('{{img}}');">
-      {% endif %}
+          <div class="base-product-card-img" style="background-image: url('{{img}}');">
+          {% endif %}
+        </div>
+        <div class="base-product-card-text">
+          <p class="base-product-card-desc">{{desc}}</p>
+          <span class="base-product-card-cost">{{cost}}
+            <span class="rub">i</span></span>
+          <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">{{discount}}
+              <span class="rub">i</span>
+            </span>
+            с бонусами</span>
+        </div>
+      </a>
+    </div>
+  {% endmacro %}
+
+  {% macro productCardSmall(border="false", img ="./images/dest/img/sliderProduct.png", badge='', desc = "Крем лифтинговый с аминокислотами 
+      и полисахаридами Anti-Wrinkle Lifting Cream, 
+      100 мл, ARAVIA Professional", cost="1 633", discount="1 219") %}
+    <div class="base-product-card base-product-card--small">
+      <button class="btn--favorites" onclick="onAddFavorites(this)">
+        <span class="visually-hidden">Добавить в избранное</span>
+      </button>
+      {# <button class="btn--basket">
+      <span class="visually-hidden">Добавить в корзину</span>
+    </button> #}
+      <a href="#" class="base-product-card-inner">
+        {% if badge === 'hit' %}
+          <span class="base-product-card-badge base-product-card-badge--hit">ХИТ</span>
+        {% endif %}
+        {% if badge === 'new' %}
+          <span class="base-product-card-badge base-product-card-badge--new">NEW</span>
+        {% endif %}
+        {% if border === true %}
+          <div class="base-product-card-img base-product-card-img--border" style="background-image: url('{{img}}');">
+          {% else %}
+            <div class="base-product-card-img" style="background-image: url('{{img}}');">
+            {% endif %}
+          </div>
+          <div class="base-product-card-text">
+            <p class="base-product-card-desc">{{desc}}</p>
+            <div class="base-product-card-cost-wrapper">
+              <span class="base-product-card-cost">{{cost}}
+                <span class="rub">i</span></span>
+              <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">{{discount}}
+                  <span class="rub">i</span>
+                </span>
+                с бонусами</span>
+            </div>
+          </div>
+        </a>
       </div>
-      <div class="base-product-card-text">
-        <p class="base-product-card-desc">{{desc}}</p>
-        <span class="base-product-card-cost">{{cost}} <span class="rub">i</span></span>
-        <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">{{discount}}<span class="rub">i</span> </span> с бонусами</span>
+    {% endmacro %}
+
+    {% macro productCardCatalog(img ="./images/dest/img/sliderProduct.png", badge='', desc = "Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл,", cost="1 633", discount="1 219") %}
+      <div class="base-product-card base-product-card--catalog">
+        <button class="btn--favorites" onclick="onAddFavorites(this)">
+          <span class="visually-hidden">Добавить в избранное</span>
+        </button>
+        <button class="btn--basket" onclick="onAddBasket(this)">
+          <span class="visually-hidden">Добавить в корзину</span>
+        </button>
+        <a href="#" class="base-product-card-inner">
+          {% if badge === 'hit' %}
+            <span class="base-product-card-badge base-product-card-badge--hit">ХИТ</span>
+          {% endif %}
+          {% if badge === 'new' %}
+            <span class="base-product-card-badge base-product-card-badge--new">NEW</span>
+          {% endif %}
+          <div class="base-product-card-img" style="background-image: url('{{img}}');"></div>
+          <div class="base-product-card-text">
+            <p class="base-product-card-category-name">ARAVIA Professional</p>
+            <div class="base-product-card-stars">
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star-empty"></div>
+            </div>
+            <p class="base-product-card-desc">{{desc}}</p>
+            <p class="base-product-card-category">Лифтинг и уход за контуром глаз</p>
+            <div class="base-product-card-cost-wrapper">
+              <span class="base-product-card-cost">{{cost}}
+                <span class="rub">i</span></span>
+              <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">{{discount}}
+                  <span class="rub">i</span>
+                </span>
+                с бонусами</span>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
-{% endmacro %}
+    {% endmacro %}
+
+    {% macro breadcrumbs(breadcrumbsItems) %}
+      <ul class="breadcrumb-item-wrapper">
+        <li>
+          <a href="./main_page.html" class="breadcrumb-item">
+            Главная
+          </a>
+          /
+        </li>
+        {% for item in breadcrumbsItems %}
+          {% if not loop.last %}
+            <li>
+              <a href="#" class="breadcrumb-item">
+                {{item}}
+              </a>
+              /
+            </li>
+          {% else %}
+            <li>
+              <span href="#" aria-current="page" class="breadcrumb-item breadcrumb-item--last">
+                {{item}}
+              </span>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endmacro %}

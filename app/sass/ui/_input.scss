@@ -55,3 +55,52 @@
   font-size: rem(16);
   color: #2b2b2b;
 }
+.radio-main {
+  @extend .visually-hidden;
+  &:checked + .radio-main-fake::after,
+  &:checked + .radio-main-wrapper .radio-main-fake::after {
+    opacity: 1;
+  }
+}
+.radio-main-fake {
+  flex: 0 0 auto;
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #b4b4b4;
+  cursor: pointer;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background-color: #dc2c7a;
+    opacity: 0;
+  }
+}
+.select-main-wrapper {
+  position: relative;
+  display: table;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    border-left: 1px solid #434343;
+  }
+}
+.select-main {
+  width: 100%;
+  color: #272727;
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  border: 1px solid #434343;
+  padding: 9px 0 8px 0;
+}

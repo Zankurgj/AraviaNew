@@ -1,0 +1,211 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <div class="catalog-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['ARAVIA Professional'], ['Косметология'],['Очищение']]) }}
+    </div>
+  </div>
+  <section class="catalog-main-catalog">
+    <div class="container">
+      <div class="row">
+        <div class="main-sidebar-col">
+          <aside class="main-catalog-sidebar">
+            <p class="catalog-sidebar-title">
+              Очищение (25)
+            </p>
+            <div class="main-catalog-sidebar-block main-catalog-sidebar-block--top">
+              <input type="checkbox" class="radio-main radio-main--catalog-sidebar" id="catalogHit">
+              <label for="catalogHit" class="radio-main-wrapper radio-main-wrapper--catalog-sidebar">
+                <span class="main-catalog-sidebar-title">Хиты</span>
+                <span class="radio-main-fake"></span>
+              </label>
+
+              <input type="checkbox" class="radio-main radio-main--catalog-sidebar" id="catalogNew">
+              <label for="catalogNew" class="radio-main-wrapper radio-main-wrapper--catalog-sidebar">
+                <span class="main-catalog-sidebar-title">Новинки</span>
+                <span class="radio-main-fake"></span>
+              </label>
+
+              <input type="checkbox" class="radio-main radio-main--catalog-sidebar" id="catalogStock">
+              <label for="catalogStock" class="radio-main-wrapper radio-main-wrapper--catalog-sidebar">
+                <span class="main-catalog-sidebar-title">Акции</span>
+                <span class="radio-main-fake"></span>
+              </label>
+            </div>
+
+            <div class="catalog-range-wrapper">
+              <div class="catalog-range-inputs">
+                <span id="firstVal"></span>
+                <span>-</span>
+                <span id="nextVal"></span>
+              </div>
+              <div class="catalog-range"></div>
+            </div>
+
+            <div class="main-catalog-sidebar-block">
+              <p class="main-catalog-sidebar-title main-catalog-sidebar-title--block">потребность кожи</p>
+              <div class="main-catalog-sidebar-inner main-catalog-sidebar-inner--gray">
+                {% set sidebarSkin = [
+                  ['Сияние'],
+                  ['Увлажнение'],
+                  ['Питание&Защита'],
+                  ['Первые признаки старения'],
+                  ['Антивозрастной уход'],
+                  ['Совершенство кожи']
+                ] %}
+                {% for item in sidebarSkin %}
+                  <label class="radio-main-wrapper radio-main-wrapper--main-catalog">
+                    <span class="main-catalog-sidebar-name">{{item}}</span>
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="main-catalog-sidebar-block">
+              <p class="main-catalog-sidebar-title main-catalog-sidebar-title--block">Бренд</p>
+              <div class="main-catalog-sidebar-inner">
+                {% set sidebarBrand = [['ARAVIA Professional'], ['ARAVIA Laboratories']] %}
+                {% for item in sidebarBrand %}
+                  <label class="radio-main-wrapper radio-main-wrapper--main-catalog">
+                    <span class="main-catalog-sidebar-name">{{item}}</span>
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="main-catalog-sidebar-block">
+              <p class="main-catalog-sidebar-title main-catalog-sidebar-title--block">Тип кожи</p>
+              <div class="main-catalog-sidebar-inner main-catalog-sidebar-inner--gray">
+                {% set sidebarTypeSkin = [['Для сухой кожи'], ['Для жирной кожи'], ['Для всех типов кожи']] %}
+                {% for item in sidebarTypeSkin %}
+                  <label class="radio-main-wrapper radio-main-wrapper--main-catalog">
+                    <span class="main-catalog-sidebar-name">{{item}}</span>
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="main-catalog-sidebar-block">
+              <p class="main-catalog-sidebar-title main-catalog-sidebar-title--block">Текстура</p>
+              <div class="main-catalog-sidebar-inner main-catalog-sidebar-inner--gray">
+                {% set sidebarTexture = [['Гель'], ['Крем'], ['Масло'], ['Молочко'], ['Флюид']] %}
+                {% for item in sidebarTexture %}
+                  <label class="radio-main-wrapper radio-main-wrapper--main-catalog">
+                    <span class="main-catalog-sidebar-name">{{item}}</span>
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake"></span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+            <div class="main-catalog-sidebar-btns">
+              <button class="btn-main btn-main--catalog-sidebar">Применить</button>
+              <button class="btn-white btn-main--catalog-sidebar">Очистить</button>
+            </div>
+          </aside>
+        </div>
+        <div class="main-catalog-col">
+          {% for i in range(0, 9) %}
+            <div class="catalog-card-col">
+              {% from "app/njk/macro.njk" import productCardCatalog %}
+              {{ productCardCatalog('./images/dest/img/sliderProduct.png', 'hit') }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <button class="btn-link-underline--big main-catalog-more-btn">Показать еще</button>
+  </section>
+  <section class="catalog-product-promo">
+    <div class="container">
+      {% include "app/njk/parts/promo_product_block.njk" %}
+    </div>
+  </section>
+  <section class="catalog-choice">
+    <div class="container">
+      <h1 class="h1-base h1-base--main-social text-center">
+        <span class="h1-base-text-underline ">выбор покупателей</span></h1>
+      {% include "app/njk/parts/choice_block.njk" %}
+    </div>
+  </section>
+  <section class="catalog-promo-block">
+    <div class="container">
+      <div class="row">
+        <div class="catalog-promo-text-inner">
+          <p class="catalog-promo-text-title">Очищение</p>
+          <p class="catalog-promo-text-desc">Натуральные очищающие средства для лица от ARAVIA подарят вашей коже долгожданное сияние. Они идеально подходят для кожи любого типа, содержат натуральные очищающие ингредиенты и придают лицу свежий и здоровый вид. Натуральные очищающие средства для лица от ARAVIA подарят вашей коже долгожданное сияние. Они идеально подходят для кожи любого типа, содержат</p>
+
+        </div>
+        <div class="catalog-promo-img-col">
+          <img src="./images/dest/img/_DSC2797.png" alt="Продукция">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="catalog-feature">
+    <h1 class="h1-base h1-base--category-feature text-center">
+      <span class="h1-base-text-underline ">наши преимущества</span></h1>
+    <div class="container">
+      <div class="main-feature-inner row row--wrap">
+        {% set featureItems = [
+          {
+            title: 'самый </br> полный </br> ассортимент',
+            img: 'cosmetics.png'
+          }, {
+            title: 'доставка </br> по России',
+            img: 'truckn.png'
+          }, {
+            title: 'эксклюзивы </br> aravia',
+            img: 'crown.png'
+          }, {
+            title: 'Программа </br> лояльности',
+            img: 'money.png'
+          }, {
+            title: 'безопасные </br> платежи',
+            img: 'safe.png'
+          }
+        ]
+ %}
+        {% for item in featureItems %}
+          <div class="main-feature-col">
+            <div class="main-feature-item">
+              <div class="main-feature-item-icon">
+                <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+              </div>
+              <p class="main-feature-item-text">
+                {{item.title | safe }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="online-block">
+    <div class="container">
+      <div class="online-block-title-wrapper">
+        <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row row--wrap">
+        {% for i in range(0, 5) %}
+          <div class="online-block-col">
+            {% from "app/njk/macro.njk" import productCardSmall %}
+            {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section class="catalog-mail">
+    {% include "app/njk/parts/mail_block.njk" %}
+  </section>
+{% endblock %}

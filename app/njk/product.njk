@@ -1,0 +1,100 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="product-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['ARAVIA Professional'], ['Косметология'],['Домашний уход'],['Ежедневный уход'],['Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл, ARAVIA Professional']]) }}
+    </div>
+  </section>
+  <section class="product-head">
+    <div class="container">
+      <div class="row">
+        <div class="product-head-slider-col">
+          <div class="product-head-badge-block">
+            <span class="product-head-badge product-head-badge--hit">hit</span>
+            <span class="product-head-badge product-head-badge--new">new</span>
+          </div>
+          <div class="product-card-slider-wrapper">
+            <div class="product-card-slider" id="productCardSlider">
+              <div class="product-card-slide" data-image="./images/dest/img/9K9VNPM.png">
+                <img src="./images/dest/img/9K9VNPM.png" alt="Продукт" class="product-card-slide-img">
+              </div>
+              <div class="product-card-slide" data-image="./images/dest/img/sliderProduct.png">
+                <img src="./images/dest/img/sliderProduct.png" alt="Продукт" class="product-card-slide-img">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-head-desc-col">
+          <p class="product-head-title">
+            Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл
+          </p>
+          <div class="product-head-desc-info">
+            <span class="product-head-desc-brand">ARAVIA Professional</span>
+            <span class="product-head-desc-art">Артикул: 9005</span>
+          </div>
+          <p>Активный лифтинг</p>
+          <div class="product-head-star-block">
+            {% include "app/njk/parts/star_block.njk" %}
+            <span class="product-head-star-text">10 отзывов</span>
+          </div>
+          <div class="product-head-list">
+            <p class="product-head-list-item">
+              <b>Тип:</b>
+              для всех типов кожи</p>
+            <p class="product-head-list-item">
+              <b>Текстура:</b>
+              крем</p>
+            <p class="product-head-list-item">
+              <b>Текстура:</b>
+              крем</p>
+          </div>
+          <p class="product-head-text">
+            Крем способствует восстановлению тургора кожи, разглаживает морщины, снимает сухость, борется с гравитационным птозом. Синергия экстрактов имбиря и плюща обладает омолаживающим и тонизирующим действием, ... подробное описание
+          </p>
+
+          <div class="product-head-cost-wrapper">
+            <div class="product-head-cost-left">
+              <div class="product-head-cost-inner">
+                <span class="product-head-cost">1 633
+                  <span class="rub">i</span></span>
+                <span class="product-head-bonus">
+                  <b>
+                    1 219
+                    <span class="rub">i</span>
+                  </b>
+                  с бонусами
+                </span>
+              </div>
+              <div class="product-head-discount-wrapper">
+                <p class="product-head-discount-title">скидка - 33%</p>
+                <span class="product-head-discount">3500.00<span class="rub">i</span></span>
+              </div>
+            </div>
+            <a href="#" class="product-head-cost-link btn">
+              <span>Посмотреть стоимость
+                <br>
+                для косметолога</span>
+            </a>
+          </div>
+          <form class="product-head-form">
+            <label class="select-main-wrapper">
+              <span class="visually-hidden">Объем товара</span>
+              <input type="text" class="select-main" value="100 мл" readonly="readonly">
+            </label>
+            <div class="basket-product-item-counter">
+              <button class="btn-item-counter btn-item-counter--minus" onclick="onCounterMinus('counter1')">
+                <span>–</span>
+              </button>
+              <input class="item-counter-input" type="text" value="0" size="4" id="counter1">
+              <button class="btn-item-counter btn-item-counter--plus" onclick="onCounterPlus('counter1')">
+                <span>+</span>
+              </button>
+            </div>
+            <button type="submit" class="btn-main">Добавить в корзину</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
