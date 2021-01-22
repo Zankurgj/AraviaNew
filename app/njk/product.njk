@@ -78,23 +78,333 @@
             </a>
           </div>
           <form class="product-head-form">
-            <label class="select-main-wrapper">
+            <label class="select-main-wrapper select-main-wrapper--product">
               <span class="visually-hidden">Объем товара</span>
-              <input type="text" class="select-main" value="100 мл" readonly="readonly">
+              <select class="select-main">
+                <option value="value1" selected="selected">100 мл</option>
+                <option value="value2">400 мл</option>
+                <option value="value3">300 мл</option>
+              </select>
             </label>
             <div class="basket-product-item-counter">
-              <button class="btn-item-counter btn-item-counter--minus" onclick="onCounterMinus('counter1')">
+              <button class="btn-item-counter" onclick="onCounterMinus('counter1')" type="button">
                 <span>–</span>
               </button>
               <input class="item-counter-input" type="text" value="0" size="4" id="counter1">
-              <button class="btn-item-counter btn-item-counter--plus" onclick="onCounterPlus('counter1')">
+              <button class="btn-item-counter" onclick="onCounterPlus('counter1')" type="button">
                 <span>+</span>
               </button>
             </div>
-            <button type="submit" class="btn-main">Добавить в корзину</button>
+            <button type="submit" class="btn-main btn-main--product-head">Добавить в корзину</button>
           </form>
+          <div class="product-head-btns-inner">
+            <a href="#" class="btn product-head-bottom-btn">
+              <img class="product-head-bottom-btn-img" src="./images/dest/icons/truck-p.png" alt="Информация о доставке">
+              <span>Информация о доставке</span>
+            </a>
+            <a href="#" class="btn product-head-bottom-btn">
+              <img class="product-head-bottom-btn-img" src="./images/dest/icons/heart-p.png" alt="Добавить в список желаний">
+              <span>Добавить в список желаний</span>
+            </a>
+            <a href="#" class="btn product-head-bottom-btn">
+              <img class="product-head-bottom-btn-img" src="./images/dest/icons/share-p.png" alt="Рассказать друзьям">
+              <span>Рассказать друзьям</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  <section class="product-tabs-block">
+    <div class="container">
+      <div class="product-tabs-btn-inner">
+        <label class="product-tabs-btn-wrapper">
+          <input type="radio" class="product-tabs-btn-input" name="product-tabs" checked="checked" onchange="onShowMenuTab(this, 'product1')">
+          <span class="product-tabs-btn-text">Описание средства</span>
+        </label>
+        <label class="product-tabs-btn-wrapper">
+          <input type="radio" class="product-tabs-btn-input" name="product-tabs" onchange="onShowMenuTab(this, 'product2')">
+          <span class="product-tabs-btn-text">Компоненты</span>
+        </label>
+        <label class="product-tabs-btn-wrapper">
+          <input type="radio" class="product-tabs-btn-input" name="product-tabs" onchange="onShowMenuTab(this, 'product3')">
+          <span class="product-tabs-btn-text">способ применения</span>
+        </label>
+        <label class="product-tabs-btn-wrapper">
+          <input type="radio" class="product-tabs-btn-input" name="product-tabs" onchange="onShowMenuTab(this, 'product4')">
+          <span class="product-tabs-btn-text">Отзывы (10)</span>
+        </label>
+        <label class="product-tabs-btn-wrapper">
+          <input type="radio" class="product-tabs-btn-input" name="product-tabs" onchange="onShowMenuTab(this, 'product5')">
+          <span class="product-tabs-btn-text">запись на курсы</span>
+        </label>
+      </div>
+      <div class="product-tabs-container">
+        <div class="product-tab-block show" data-tab-name="product-tabs" id="product1">
+          <div class="row">
+            <div class="product-tab-col">
+              <p>Крем способствует восстановлению тургора кожи, разглаживает морщины, снимает сухость, борется с гравитационным птозом. Синергия экстрактов имбиря и плюща обладает омолаживающим и тонизирующим действием, улучшает микроциркуляцию и обменные процессы в клетках. Комплекс полисахаридов аккумулирует влагу в верхних слоях кожи, снижает трансэпидермальную потерю воды, увеличивает уровень коллагена. Экстракт колеуса и смолы мирры оказывают липолитическое действие, локально воздействуя на жировые отложения в области подбородка, формируют четкий контур лица. Крем мгновенно разглаживает кожу лица, делая морщины менее заметными, и оказывает долговременное действие, улучшая состояние возрастной кожи.</p>
+              <p>НАЗНАЧЕНИЕ: для всех типов кожи.</p>
+              <p>ПРИМЕЧАНИЕ: предназначен для домашнего ухода за кожей при появлении первых признаков возрастных изменений</p>
+              <p>Продукт сертифицирован.</p>
+            </div>
+            <div class="product-tab-col product-tab-col--side">
+              <p>ДЕЙСТВИЕ:</p>
+              <ul>
+                <li>
+                  <span>липолитическое действие</span></li>
+                <li>
+                  <span>разглаживает кожу лица</span></li>
+                <li>
+                  <span>снижает трансэпидермальную потерю воды</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="product-tab-block" data-tab-name="product-tabs" id="product2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem suscipit eligendi placeat, corporis maxime quam cum amet labore, ea est sunt sapiente ratione, impedit sint veritatis incidunt voluptate itaque doloribus!</div>
+        <div class="product-tab-block" data-tab-name="product-tabs" id="product3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum ea commodi eaque placeat voluptas debitis architecto quia quas ipsum dolorem. Dicta explicabo omnis ratione id autem nobis quia odit quos, hic perferendis, at repellendus placeat culpa veniam nesciunt. Eaque recusandae, excepturi quasi esse perspiciatis obcaecati voluptatum unde aspernatur quo sed, eius dolores laborum repellendus sint non soluta! Repellat consectetur earum eius soluta doloremque dolore officiis numquam magnam tenetur unde ea non similique autem, quae eligendi nostrum, corrupti neque atque ipsa nisi culpa facere debitis perspiciatis quos. Amet, cum qui. Quod expedita reiciendis exercitationem laudantium nihil pariatur enim dolores in doloremque quia. Molestiae eius blanditiis illo maxime sit, magnam temporibus, explicabo quos deleniti dolorum enim dolores dolorem, vel labore! Libero odio ab porro quisquam sint architecto molestiae vel minima! Soluta rem dolore quam corporis aspernatur in consequuntur, magnam commodi maxime autem nobis iusto! Repellendus accusamus excepturi fuga cupiditate nisi. Optio quas natus tempora eligendi vitae obcaecati, voluptatibus aut praesentium quo culpa nulla possimus numquam dolorum, sequi veniam ipsam. Ex suscipit eaque velit placeat nesciunt veritatis molestias maiores in modi aspernatur facilis unde quos optio quisquam cumque asperiores recusandae hic, ea ipsum laboriosam accusantium ad iusto molestiae et! Neque ipsam ratione atque.</div>
+        <div class="product-tab-block" data-tab-name="product-tabs" id="product4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eos eaque modi quis, facere atque nesciunt ipsam nam maiores tempore quam rem est non facilis accusamus et perspiciatis a architecto veniam consequatur aperiam illo quaerat? Rem, eveniet autem ex eius qui impedit culpa sit delectus iusto animi dignissimos fuga ullam! Aspernatur possimus illo neque dolorem natus cupiditate! Ipsam eos quis pariatur alias! Dolorem laboriosam tenetur velit suscipit praesentium molestias iusto numquam commodi quia, dignissimos atque sed aspernatur explicabo, iste beatae animi cupiditate obcaecati neque eveniet repellat voluptate deleniti magni nisi dolores! Maiores deleniti accusantium officiis, ducimus totam laboriosam eligendi. Doloribus!</div>
+        <div class="product-tab-block" data-tab-name="product-tabs" id="product5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus quos repellendus sint perspiciatis aliquid dolorum, cum consequuntur voluptatem earum esse iste odio? Eligendi, minima. Dolore magnam, asperiores sint dolorem harum est, maxime unde quia necessitatibus sit recusandae delectus! Minus, animi. Aliquam quibusdam atque consequatur autem aut delectus error? Molestiae, doloremque!</div>
+      </div>
+    </div>
+  </section>
+  <section class="product-recommend-block">
+    <h1 class="h1-base h1-base--product-recommend text-center">
+      <span class="h1-base-text-underline">Рекомендуем</span>
+    </h1>
+    <div class="container">
+      <div class="row row--product-recommend">
+        {% for i in range(0, 3) %}
+          <div class="product-recommend-col">
+            {% from "app/njk/macro.njk" import productCard %}
+            {{ productCard(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+            <div class="product-recommend-stars">
+              {% include "app/njk/parts/star_block.njk" %}
+              <span class="product-head-star-text">10 отзывов</span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="product-recommend-basket">
+      <div class="container">
+        <p class="product-recommend-basket-text">
+          Товаров в вашем меню на
+          <span class="product-recommend-basket-text-cost">2438.00
+            <span class="rub">i</span></span>
+          <span class="product-recommend-basket-text-discont">3500.00
+            <span class="rub">i</span></span>
+          <span class="product-recommend-basket-text-percent">скидка- 20%</span>
+        </p>
+        <div class="product-recommend-basket-btns">
+          <button class="btn-main btn-main--product-recommend">Добавить в корзину</button>
+          <button class="product-head-bottom-btn product-head-bottom-btn--recomend">
+            <img class="product-head-bottom-btn-img" src="./images/dest/icons/heart-p.png" alt="Добавить в список желаний">
+            <span>Добавить в список желаний</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product-comment-block">
+    <h1 class="h1-base h1-base--product-comment text-center">
+      <span class="h1-base-text-underline">Отзывы
+        <span>(10)</span>
+      </span>
+    </h1>
+    <div class="product-comment-head">
+      <div class="container container--product-comment-head">
+        <p class="product-comment-head-title">
+          <span>10</span>
+          Отзывы</p>
+        <div class="select-transparent-wrapper">
+          <select class="select-transparent product-comment-select">
+            <option value="value1" selected="selected" disabled="disabled">Сортировать</option>
+            <option value="value2">option 1</option>
+            <option value="value3">option 1</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    {% for i in range(0, 3) %}
+      <div class="product-comment-inner">
+        <div class="product-comment">
+          <div class="container">
+            <div class="row">
+              <div class="product-comment-left-col">
+                <div class="product-comment-profile">
+                  <p class="product-comment-name">Евгения</p>
+                  <div class="product-comment-text-list">
+                    <span>Рейтинг:</span>
+                    <span class="product-comment-star">
+                      {% include "app/njk/parts/star_block.njk" %}
+                    </span>
+                    <span>4 из 5</span>
+                  </p>
+                </div>
+                <div class="product-comment-text-list">
+                  <span>Город: Москва</span>
+                </div>
+                <div class="product-comment-text-list">
+                  <span>Возраст: 36 лет</span>
+                </div>
+                <div class="product-comment-text-list">
+                  <span>Тип кожи: сухая</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-comment-right-col">
+              <p class="product-comment-date">
+                <b>Отличный</b>
+                - 29.10.2019
+              </p>
+              <div class="product-comment-text-inner">
+                <p>Пользуюсь кремом около 3х недель и результат очень радует! Кожа бархатистая и подтянутая, поверх крема наношу CC крем также от Аравии, все отлично держится, не скатывается. Крем бежево - жёлтого цвета с приятным ароматом. Очень хороший и главное, рабочий состав. Кожу не сушит, никаких шелушений и стянутости. Очень хорош для возрастной кожи. Однозначно буду его советовать знакомым.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-comment-footer">
+          <div class="container container--product-comment-footer">
+            <div class="row">
+              <div class="product-comment-left-col">
+                <span class="product-comment-footer-text">Обзоров:
+                  <span>5</span></span>
+                <span class="product-comment-footer-text">Голосов:
+                  <span>5</span></span>
+              </div>
+              <div class="product-comment-right-col">
+                <div class="product-comment-footer-vote">
+                  <span class="product-comment-vote-text">Полезный обзор?</span>
+                  <div class="vote-wrapper">
+                    <button class="btn-vote btn-vote--positive">
+                      <span class="visually-hidden">положительный отзыв</span>
+                    </button>
+                    <span class="vote-number">6</span>
+                  </div>
+                  <div class="vote-wrapper">
+                    <button class="btn-vote btn-vote--negative">
+                      <span class="visually-hidden">отрицательный отзыв</span>
+                    </button>
+                    <span class="vote-number">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+    <div class="container comment-send-block">
+      <button class="btn-main btn-main-comment-send">Написать отзыв</button>
+    </div>
+  </div>
+</section>
+<section class="broduct-promo-block">
+  <h1 class="h1-base h1-base--broduct-promo text-center">
+    <span class="h1-base-text-underline">Вам также может понравиться</span>
+  </h1>
+  <div class="container">
+    <article class="slider-product-wrapper">
+      <button class="slider-arrow slider-arrow--prew slider-arrow--product-prew">
+        <span class="visually-hidden">Назад</span>
+      </button>
+
+      <div class="slider-product js-product-slider-promo">
+        {% for i in range(0, 7) %}
+          <div class="slider-product-slide-wrapper">
+            {% from "app/njk/macro.njk" import productCard %}
+            {{ productCard(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+          </div>
+        {% endfor %}
+      </div>
+      <button class="slider-arrow slider-arrow--next slider-arrow--product-next">
+        <span class="visually-hidden">Вперед</span>
+      </button>
+    </article>
+  </div>
+</section>
+<section class="broduct-promo-block">
+  <h1 class="h1-base h1-base--broduct-promo text-center">
+    <span class="h1-base-text-underline">недавно просмотренные</span>
+  </h1>
+  <div class="container">
+    <article class="slider-product-wrapper">
+      <button class="slider-arrow slider-arrow--prew slider-arrow--product-prew">
+        <span class="visually-hidden">Назад</span>
+      </button>
+
+      <div class="slider-product js-product-slider-promo">
+        {% for i in range(0, 7) %}
+          <div class="slider-product-slide-wrapper">
+            {% from "app/njk/macro.njk" import productCard %}
+            {{ productCard(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+          </div>
+        {% endfor %}
+      </div>
+      <button class="slider-arrow slider-arrow--next slider-arrow--product-next">
+        <span class="visually-hidden">Вперед</span>
+      </button>
+    </article>
+  </div>
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
 {% endblock %}

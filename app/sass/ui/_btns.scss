@@ -64,3 +64,16 @@ input[type='submit'] {
     color: #592c82;
   }
 }
+.btn-vote {
+  height: 50px;
+  width: 32px;
+  background-repeat: no-repeat;
+}
+.btn-vote--positive {
+  background-position: center top 6px;
+  background-image: url('../images/dest/icons/like-comment.png');
+}
+.btn-vote--negative {
+  background-position: center bottom 6px;
+  background-image: url('../images/dest/icons/dislike-comment.png');
+}

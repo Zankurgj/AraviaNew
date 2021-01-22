@@ -93,6 +93,10 @@
     height: 100%;
     width: 40px;
     border-left: 1px solid #434343;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../images/dest/icons/sel-arrow.png');
   }
 }
 .select-main {
@@ -102,5 +106,39 @@
   font-weight: 300;
   text-align: center;
   border: 1px solid #434343;
-  padding: 9px 0 8px 0;
+  appearance: none;
+  height: 50px;
+  padding: 0 40px 0 10px;
+  text-align: center;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.select-transparent-wrapper {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 30px;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../images/dest/icons/sel-arrow.png');
+  }
+}
+.select-transparent {
+  border: none;
+  appearance: none;
+  padding-right: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #272727;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 }

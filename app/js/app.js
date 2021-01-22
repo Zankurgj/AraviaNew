@@ -46,6 +46,25 @@ $('#productSlider').slick({
   //   },
   // ],
 });
+$('.js-product-slider-promo').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  infinite: true,
+  arrows: true,
+  dots: false,
+  prevArrow: $('.slider-arrow--product-prew'),
+  nextArrow: $('.slider-arrow--product-next'),
+  // responsive: [
+  //   {
+  //     breakpoint: 1000,
+  //     settings: {
+  //       dots: false,
+  //       slidesToShow: 1,
+  //       arrows: false,
+  //     },
+  //   },
+  // ],
+});
 $('#productSliderNew').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
