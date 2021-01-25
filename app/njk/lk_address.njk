@@ -1,0 +1,277 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="lk-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Личный кабинет']]) }}
+    </div>
+  </section>
+  <section class="lk-block">
+    <div class="container">
+      <div class="row">
+        <div class="lk-sidebar-col">
+          <aside class="lk-sidebar">
+            <div class="lk-sidebar-info">
+              <div class="lk-sidebar-info-img" style="background-image: url('./images/dest/img/avatarimg.png');"></div>
+              <p class="lk-sidebar-info-name text-center">Антон</p>
+              <p class="lk-sidebar-info-text text-center">
+                Последнее посещение:
+                <br>
+                <span>19/02/2020</span>
+              </p>
+            </div>
+            <nav class="lk-sidebar-nav">
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/accountn.png" alt="иконка личный кабинет" class="lk-sidebar-nav-item-icon">
+                <span>Личный кабинет</span>
+              </a>
+              <span class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/personal-information.png" alt="иконка Мои данные" class="lk-sidebar-nav-item-icon">
+                <span>Мои данные</span>
+              </span>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/package.png" alt="иконка Мои заказы" class="lk-sidebar-nav-item-icon">
+                <span>Мои заказы</span>
+              </a>
+              <div class="lk-sidebar-nav-item-wrapper">
+                <a href="#" class="lk-sidebar-nav-item lk-sidebar-nav-item--active">
+                  <img src="./images/dest/icons/gps-active.png" alt="иконка Мои адреса" class="lk-sidebar-nav-item-icon">
+                  <span>Мои адреса</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/mail.png" alt="иконка Подписки" class="lk-sidebar-nav-item-icon">
+                  <span>Подписки</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/heart11.png" alt="иконка Лист желаний" class="lk-sidebar-nav-item-icon">
+                  <span>Лист желаний</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/certificate11.png" alt="иконка Сертификаты" class="lk-sidebar-nav-item-icon">
+                  <span>Сертификаты</span>
+                </a>
+              </div>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/coin.png" alt="иконка ARAVIA бонус" class="lk-sidebar-nav-item-icon">
+                <span>ARAVIA бонус</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/crown1.png" alt="иконка Партнерская программа" class="lk-sidebar-nav-item-icon">
+                <span>Партнерская программа</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/question1.png" alt="иконка Консультации" class="lk-sidebar-nav-item-icon">
+                <span>Консультации</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+        <div class="lk-inner-col">
+          <p class="lk-inner-title">Мои Адреса</p>
+          <div class="lk-inner-addres-wrapper" id="addressInner">
+            <table class="lk-inner-adsress-table">
+              <tr class="lk-inner-adsress-table-head">
+                <th>Название</th>
+                <th>Дата обновления</th>
+                <th>Действия</th>
+              </tr>
+              <tr>
+                <td>
+                  <label class="radio-main-wrapper radio-main-wrapper--adsress-radio">
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake radio-main-fake--adsress-radio"></span>
+                    <span class="lk-inner-adsress-radio-text">Основной</span>
+                  </label>
+                </td>
+                <td>19.02.2020</td>
+                <td>
+                  <div class="adsress-table-btns">
+                    <span class="adsress-table-btn-text">Изменить</span>
+                    <button class="btn--adsress-table btn-remove--small">
+                      <span class="visually-hidden">удалить</span>
+                    </button>
+                    <button class="btn--adsress-table btn-edit--small" onclick="onToggleAddressForm()">
+                      <span class="visually-hidden">редактировать</span>
+                    </button>
+                  </div>
+
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <label class="radio-main-wrapper radio-main-wrapper--adsress-radio">
+                    <input type="checkbox" class="radio-main">
+                    <span class="radio-main-fake radio-main-fake--adsress-radio"></span>
+                    <span class="lk-inner-adsress-radio-text">Работа</span>
+                  </label>
+                </td>
+                <td>19.02.2020</td>
+                <td>
+                  <div class="adsress-table-btns">
+                    <span class="adsress-table-btn-text">Изменить</span>
+                    <button class="btn--adsress-table btn-remove--small">
+                      <span class="visually-hidden">удалить</span>
+                    </button>
+                    <button class="btn--adsress-table btn-edit--small" onclick="onToggleAddressForm()">
+                      <span class="visually-hidden">редактировать</span>
+                    </button>
+                  </div>
+
+                </td>
+              </tr>
+
+            </table>
+            <button class="btn-main btn--lk-inner-adsress-bottom" onclick="onToggleAddressForm()">Добавить новый адрес</button>
+          </div>
+          <div class="lk-inner-addres-form-wrapper" id="addressForm">
+            <p class="lk-inner-addres-form-title">Добавить новый адрес
+              <button class="lk-inner-addres-form-btn-back" onclick="onToggleAddressForm()">Назад</button>
+            </p>
+            <div class="row row--wrap">
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-full">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Название нового адреса</p>
+                  <input type="text" class="lk-input" placeholder="Введите наименование">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Город</p>
+                  <select class="lk-input lk-input--select">
+                    <option value="value1" selected="selected">Москва</option>
+                    <option value="value2">option1</option>
+                    <option value="value3">option1</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Ближайшее метро</p>
+                  <select class="lk-input lk-input--select">
+                    <option value="value1">Москва</option>
+                    <option value="value2">option1</option>
+                    <option value="value3">option1</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-2">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Улица*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Дом*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Корпус/строение*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Квартира*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-3">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Индекс*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-addres-form-col lk-inner-addres-form-col-full">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Подъезд и другие пожелания</p>
+                  <textarea class="base-textarea textarea--lk-inner-addres"></textarea>
+                </label>
+              </div>
+              <label class="radio-main-wrapper radio-main-wrapper--adsress-new-radio">
+                <input type="checkbox" class="radio-main">
+                <span class="radio-main-fake radio-main-fake--adsress-radio"></span>
+                <span class="lk-inner-adsress-radio-new-text">Основной адрес</span>
+              </label>
+            </div>
+            <div class="lk-inner-addres-form-btns">
+              <button class="btn-main btn--lk-inner-addres-form">Сохранить</button>
+              <button class="btn-main btn--lk-inner-addres-form" disabled="disabled">Отменить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
+{% endblock %}

@@ -1,0 +1,221 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="lk-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Личный кабинет']]) }}
+    </div>
+  </section>
+  <section class="lk-block">
+    <div class="container">
+      <div class="row">
+        <div class="lk-sidebar-col">
+          <aside class="lk-sidebar">
+            <div class="lk-sidebar-info">
+              <div class="lk-sidebar-info-img" style="background-image: url('./images/dest/img/avatarimg.png');"></div>
+              <p class="lk-sidebar-info-name text-center">Антон</p>
+              <p class="lk-sidebar-info-text text-center">
+                Последнее посещение:
+                <br>
+                <span>19/02/2020</span>
+              </p>
+            </div>
+            <nav class="lk-sidebar-nav">
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/accountn.png" alt="иконка личный кабинет" class="lk-sidebar-nav-item-icon">
+                <span>Личный кабинет</span>
+              </a>
+              <span class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/personal-information.png" alt="иконка Мои данные" class="lk-sidebar-nav-item-icon">
+                <span>Мои данные</span>
+              </span>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/package.png" alt="иконка Мои заказы" class="lk-sidebar-nav-item-icon">
+                <span>Мои заказы</span>
+              </a>
+              <div class="lk-sidebar-nav-item-wrapper">
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/gps-active.png" alt="иконка Мои адреса" class="lk-sidebar-nav-item-icon">
+                  <span>Мои адреса</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item lk-sidebar-nav-item--active">
+                  <img src="./images/dest/icons/mail-active.png" alt="иконка Подписки" class="lk-sidebar-nav-item-icon">
+                  <span>Подписки</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/heart11.png" alt="иконка Лист желаний" class="lk-sidebar-nav-item-icon">
+                  <span>Лист желаний</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/certificate11.png" alt="иконка Сертификаты" class="lk-sidebar-nav-item-icon">
+                  <span>Сертификаты</span>
+                </a>
+              </div>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/coin.png" alt="иконка ARAVIA бонус" class="lk-sidebar-nav-item-icon">
+                <span>ARAVIA бонус</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/crown1.png" alt="иконка Партнерская программа" class="lk-sidebar-nav-item-icon">
+                <span>Партнерская программа</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/question1.png" alt="иконка Консультации" class="lk-sidebar-nav-item-icon">
+                <span>Консультации</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+        <div class="lk-inner-col">
+          <p class="lk-inner-title lk-inner-title--border lk-inner-title--subscribe">Подписки</p>
+          <label class="radio-main-wrapper radio-main-wrapper--subscribe">
+            <input type="checkbox" class="radio-main">
+            <span class="radio-main-fake radio-main-fake--subscribe"></span>
+            <p class="lk-inner-subscribe-title">Email-рассылка «Акции, скидки, новости интернет-магазина ARAVIA и программы лояльностиARAVIA Бонус»</p>
+            <p class="lk-inner-subscribe-text">Новости о распродажах и выгодных акциях, новинках и секретных промокодах ARAVIA</p>
+          </label>
+
+          <label class="radio-main-wrapper radio-main-wrapper--subscribe">
+            <input type="checkbox" class="radio-main">
+            <span class="radio-main-fake radio-main-fake--subscribe"></span>
+            <p class="lk-inner-subscribe-title">SMS-рассылка «Акции программы лояльности ARAVIA Бонус»</p>
+            <p class="lk-inner-subscribe-text">Новости об акциях, закрытых распродажах программы лояльности, подарки к праздникам отARAVIA</p>
+          </label>
+
+          <button class="btn-main btn--lk-inner-subscribe">Сохранить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="lk-subscribe-promo">
+  <h1 class="h1-base h1-base--lk-subscribe text-center">
+    <span>5 причин</span>
+    <br>
+    <span class="h1-base-text-underline">читать наши рассылки</span>
+  </h1>
+  <div class="container">
+    <div class="row row--lk-subscribe-promo">
+      <div class="lk-subscribe-promo-item">
+        <span class="lk-subscribe-promo-item-number">1</span>
+        <div class="lk-subscribe-promo-item-text">
+          <p>В числе первых
+            <br>
+            узнавать
+            <br>
+            про скидки и акции
+          </p>
+        </div>
+      </div>
+
+      <div class="lk-subscribe-promo-item">
+        <span class="lk-subscribe-promo-item-number">2</span>
+        <div class="lk-subscribe-promo-item-text">
+          <p>Раньше других
+            <br>
+            узнавать
+            <br>
+            про новинки
+          </p>
+        </div>
+      </div>
+
+      <div class="lk-subscribe-promo-item">
+        <span class="lk-subscribe-promo-item-number">3</span>
+        <div class="lk-subscribe-promo-item-text">
+          <p>Получать
+            <br>
+            больше
+            <br>
+            бонусов
+          </p>
+        </div>
+      </div>
+
+      <div class="lk-subscribe-promo-item">
+        <span class="lk-subscribe-promo-item-number">4</span>
+        <div class="lk-subscribe-promo-item-text">
+          <p>читать
+            <br>
+            полезные
+            <br>
+            статьи
+          </p>
+        </div>
+      </div>
+
+      <div class="lk-subscribe-promo-item">
+        <span class="lk-subscribe-promo-item-number">5</span>
+        <div class="lk-subscribe-promo-item-text">
+          <p>Выигрывать
+            <br>
+            призы
+            <br>
+            в конкурсах
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
+{% endblock %}

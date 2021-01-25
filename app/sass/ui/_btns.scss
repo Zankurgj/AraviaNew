@@ -29,6 +29,14 @@ input[type='submit'] {
     color: #fff;
     background-color: #dc2c7b;
   }
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+    &:hover {
+      color: #fff;
+      background-color: #592c82;
+    }
+  }
 }
 .btn-white {
   padding: 16px 10px 18px 10px;

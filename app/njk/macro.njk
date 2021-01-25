@@ -111,6 +111,43 @@
         </a>
       </div>
     {% endmacro %}
+    {% macro productCardCatalogNoPay(img ="./images/dest/img/sliderProduct.png", badge='', desc = "Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл,", cost="1 633", discount="1 219") %}
+      <div class="base-product-card base-product-card--catalog base-product-card--border">
+        <button class="btn--favorites" onclick="onAddFavorites(this)">
+          <span class="visually-hidden">Добавить в избранное</span>
+        </button>
+        <a href="#" class="base-product-card-inner">
+          {% if badge === 'hit' %}
+            <span class="base-product-card-badge base-product-card-badge--hit">ХИТ</span>
+          {% endif %}
+          {% if badge === 'new' %}
+            <span class="base-product-card-badge base-product-card-badge--new">NEW</span>
+          {% endif %}
+          <div class="base-product-card-img" style="background-image: url('{{img}}');"></div>
+          <div class="base-product-card-text">
+            <p class="base-product-card-category-name">ARAVIA Professional</p>
+            <div class="base-product-card-stars">
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star--full"></div>
+              <div class="base-product-card-star base-product-card-star-empty"></div>
+            </div>
+            <p class="base-product-card-desc">{{desc}}</p>
+            <p class="base-product-card-category">Лифтинг и уход за контуром глаз</p>
+            <div class="base-product-card-cost-wrapper">
+              <span class="base-product-card-cost">{{cost}}
+                <span class="rub">i</span></span>
+              <span class="base-product-card-bonus"><span class="base-product-card-bonus-cost">{{discount}}
+                  <span class="rub">i</span>
+                </span>
+                с бонусами</span>
+            </div>
+          </div>
+        </a>
+        <button class="btn-main btn-main--nopay">Добавить в корзину</button>
+      </div>
+    {% endmacro %}
 
     {% macro breadcrumbs(breadcrumbsItems) %}
       <ul class="breadcrumb-item-wrapper">

@@ -1,0 +1,233 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="lk-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Личный кабинет']]) }}
+    </div>
+  </section>
+  <section class="lk-block">
+    <div class="container">
+      <div class="row">
+        <div class="lk-sidebar-col">
+          <aside class="lk-sidebar">
+            <div class="lk-sidebar-info">
+              <div class="lk-sidebar-info-img" style="background-image: url('./images/dest/img/avatarimg.png');"></div>
+              <p class="lk-sidebar-info-name text-center">Антон</p>
+              <p class="lk-sidebar-info-text text-center">
+                Последнее посещение:
+                <br>
+                <span>19/02/2020</span>
+              </p>
+            </div>
+            <nav class="lk-sidebar-nav">
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/accountn.png" alt="иконка личный кабинет" class="lk-sidebar-nav-item-icon">
+                <span>Личный кабинет</span>
+              </a>
+              <span class="lk-sidebar-nav-item lk-sidebar-nav-item--active">
+                <img src="./images/dest/icons/personal-information-active.png" alt="иконка Мои данные" class="lk-sidebar-nav-item-icon">
+                <span>Мои данные</span>
+              </span>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/package.png" alt="иконка Мои заказы" class="lk-sidebar-nav-item-icon">
+                <span>Мои заказы</span>
+              </a>
+              <div class="lk-sidebar-nav-item-wrapper">
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/gps.png" alt="иконка Мои адреса" class="lk-sidebar-nav-item-icon">
+                  <span>Мои адреса</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/mail.png" alt="иконка Подписки" class="lk-sidebar-nav-item-icon">
+                  <span>Подписки</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/heart11.png" alt="иконка Лист желаний" class="lk-sidebar-nav-item-icon">
+                  <span>Лист желаний</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/certificate11.png" alt="иконка Сертификаты" class="lk-sidebar-nav-item-icon">
+                  <span>Сертификаты</span>
+                </a>
+              </div>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/coin.png" alt="иконка ARAVIA бонус" class="lk-sidebar-nav-item-icon">
+                <span>ARAVIA бонус</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/crown1.png" alt="иконка Партнерская программа" class="lk-sidebar-nav-item-icon">
+                <span>Партнерская программа</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/question1.png" alt="иконка Консультации" class="lk-sidebar-nav-item-icon">
+                <span>Консультации</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+        <div class="lk-inner-col">
+          <p class="lk-inner-title">Мои Данные</p>
+          {# container #}
+          <form class="lk-inner-data-form">
+            <div class="row row--wrap">
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Имя*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Фамилия*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Отчество*</p>
+                  <input type="text" class="lk-input">
+                </label>
+              </div>
+
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Город*</p>
+                  <select class="lk-input lk-input--select">
+                    <option value="value1" selected="selected">Москва</option>
+                    <option value="value2">option1</option>
+                    <option value="value3">option1</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <p class="lk-input-title">Пол</p>
+                  <select class="lk-input lk-input--select">
+                    <option value="value1" selected="selected">Мужской</option>
+                    <option value="value2">Женский</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="lk-inner-data-form-col">
+                <label class="lk-input-wrapper">
+                  <img src="./images/dest/icons/calendar.png" alt="календарь" class="lk-input-icon-calendar">
+                  <p class="lk-input-title">Дата рождения*</p>
+                  <input type="text" class="lk-input" id="date" placeholder="ДД.ММ.ГГГГ">
+                </label>
+              </div>
+              <div class="lk-inner-data-form-col-full">
+                <div class="lk-inner-data-form-col">
+                  <label class="lk-input-wrapper">
+                    <p class="lk-input-title">У меня есть супруг</p>
+                    <select class="lk-input lk-input--select">
+                      <option value="value1" selected="selected">Нет</option>
+                      <option value="value2">Да</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="lk-inner-data-form-col">
+                  <label class="lk-input-wrapper">
+                    <p class="lk-input-title">У меня есть дети</p>
+                    <select class="lk-input lk-input--select">
+                      <option value="value1" selected="selected">Нет</option>
+                      <option value="value2">Да</option>
+                    </select>
+                  </label>
+                </div>
+              </div>
+
+            </div>
+            <div class="lk-inner-accent-block">
+              <p class="lk-inner-accent-title">Контакты</p>
+              <div class="row row--wrap row--lk-inner-accent">
+                <label class="lk-accent-input-wrapper">
+                  <p class="lk-accent-input-title">У Электронная почта*</p>
+                  <input type="text" class="lk-accent-input" value="anton@mail.ru">
+                </label>
+                <label class="lk-accent-input-wrapper">
+                  <img src="./images/dest/icons/edit-lk.png" alt="редактировать" class="lk-accent-input-img-1">
+                  <p class="lk-accent-input-title">Телефон*</p>
+                  <input type="text" class="lk-accent-input" value="(926) 000-00-00" id="phone">
+                </label>
+                <label class="lk-accent-input-wrapper">
+                  <img src="./images/dest/icons/edit-lk.png" alt="редактировать" class="lk-accent-input-img-2">
+                  <p class="lk-accent-input-title">Пароль*</p>
+                  <input type="text" class="lk-accent-input" value="******">
+                </label>
+              </div>
+            </div>
+            <p class="lk-inner-data-subtext">*Поля, обязательные для заполнения</p>
+            <button type="submit" class="btn-main btn--lk-inner-data">Сохранить</button>
+          </form>
+          {# container  end #}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
+{% endblock %}

@@ -1,0 +1,230 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="lk-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Личный кабинет']]) }}
+    </div>
+  </section>
+  <section class="lk-block">
+    <div class="container">
+      <div class="row">
+        <div class="lk-sidebar-col">
+          <aside class="lk-sidebar">
+            <div class="lk-sidebar-info">
+              <div class="lk-sidebar-info-img" style="background-image: url('./images/dest/img/avatarimg.png');"></div>
+              <p class="lk-sidebar-info-name text-center">Антон</p>
+              <p class="lk-sidebar-info-text text-center">
+                Последнее посещение:
+                <br>
+                <span>19/02/2020</span>
+              </p>
+            </div>
+            <nav class="lk-sidebar-nav">
+              <span href="#" class="lk-sidebar-nav-item lk-sidebar-nav-item--active">
+                <img src="./images/dest/icons/account.png" alt="иконка личный кабинет" class="lk-sidebar-nav-item-icon">
+                <span>Личный кабинет</span>
+              </span>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/personal-information.png" alt="иконка Мои данные" class="lk-sidebar-nav-item-icon">
+                <span>Мои данные</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/package.png" alt="иконка Мои заказы" class="lk-sidebar-nav-item-icon">
+                <span>Мои заказы</span>
+              </a>
+              <div class="lk-sidebar-nav-item-wrapper">
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/gps.png" alt="иконка Мои адреса" class="lk-sidebar-nav-item-icon">
+                  <span>Мои адреса</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/mail.png" alt="иконка Подписки" class="lk-sidebar-nav-item-icon">
+                  <span>Подписки</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/heart11.png" alt="иконка Лист желаний" class="lk-sidebar-nav-item-icon">
+                  <span>Лист желаний</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/certificate11.png" alt="иконка Сертификаты" class="lk-sidebar-nav-item-icon">
+                  <span>Сертификаты</span>
+                </a>
+              </div>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/coin.png" alt="иконка ARAVIA бонус" class="lk-sidebar-nav-item-icon">
+                <span>ARAVIA бонус</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/crown1.png" alt="иконка Партнерская программа" class="lk-sidebar-nav-item-icon">
+                <span>Партнерская программа</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/question1.png" alt="иконка Консультации" class="lk-sidebar-nav-item-icon">
+                <span>Консультации</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+        <div class="lk-inner-col">
+          <p class="lk-inner-title lk-inner-title--border lk-inner-title--lk">Добро пожаловать в личный кабинет</p>
+          <div class="row row--wrap">
+            <div class="lk-inner-item-col">
+              <div class="lk-inner-item">
+                <p class="lk-inner-item-title">
+                  <img src="./images/dest/icons/questionlk.png" alt="иконка Задайте вопрос эксперту" class="lk-inner-item-title-img">
+                  Моя корзина
+                </p>
+                <div class="lk-inner-item-slider-wrapper">
+                  <button class="slider-arrow slider-arrow--prew slider-arrow-basked--main-prew">
+                    <span class="visually-hidden">Назад</span>
+                  </button>
+                  <button class="slider-arrow slider-arrow--next slider-arrow-basked--main-next">
+                    <span class="visually-hidden">Вперед</span>
+                  </button>
+                  <div class="lk-inner-item-slider">
+                    {% for i in range(0, 2) %}
+                      <div class="lk-inner-item-slide">
+                        <div class="lk-inner-slide">
+                          <div class="lk-inner-slide-img" style="background-image: url('./images/dest/img/50ml_1.png');"></div>
+                          <div class="lk-inner-slide-inner">
+                            <p class="lk-inner-slide-name">ARAVIA Professional</p>
+                            <p class="lk-inner-slide-text">Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл</p>
+                          </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="lk-inner-item-bottom">
+                  <div class="lk-inner-item-bottom-text">
+                    <p>2 продукта</p>
+                    <p>На сумму: 1920
+                      <span class="rub">i</span></p>
+                  </div>
+                  <a href="#" class="btn btn-main btn--lk-inner-item-bottom">Подробнее</a>
+                </div>
+              </div>
+            </div>
+            <div class="lk-inner-item-col">
+              <div class="lk-inner-item">
+                <p class="lk-inner-item-title">
+                  <img src="./images/dest/icons/basked-lk.png" alt="иконка Мои заказы" class="lk-inner-item-title-img">
+                  Мои заказы
+                </p>
+                <table class="lk-inner-item-table">
+                  <tr>
+                    <th>Номер заказа</th>
+                    <th>Статус</th>
+                    <th>Сумма заказа</th>
+                  </tr>
+                  <tr>
+                    <td>Заказ
+                      <br>
+                      № 19022020-00001
+                      <br>
+                      от 19.02.2020</td>
+                    <td>В обработке</td>
+                    <td>12500<span class="rub">i</span></td>
+                  </tr>
+                </table>
+                <a href="#" class="btn btn-main btn--lk-inner-item-bottom">Подробнее</a>
+              </div>
+            </div>
+            <div class="lk-inner-item-col">
+              <div class="lk-inner-item">
+                <p class="lk-inner-item-title">
+                  <img src="./images/dest/icons/certificatelk.png" alt="иконка Мои сертификаты" class="lk-inner-item-title-img">
+                  Мои сертификаты
+                </p>
+                <div class="row row--wrap lk-inner-item-cert-wrapper">
+                  <a href="#" class="lk-inner-item-cert-col">
+                    <img src="./images/dest/img/cert.png" alt="Сертификат" class="lk-inner-item-cert-img">
+                  </a>
+                  <a href="#" class="lk-inner-item-cert-col">
+                    <img src="./images/dest/img/cert.png" alt="Сертификат" class="lk-inner-item-cert-img">
+                  </a>
+                </div>
+                <a href="#" class="btn btn-main btn--lk-inner-item-bottom">Подробнее</a>
+              </div>
+            </div>
+
+            <div class="lk-inner-item-col">
+              <div class="lk-inner-item">
+                <p class="lk-inner-item-title">
+                  <img src="./images/dest/icons/questionlk.png" alt="иконка Задайте вопрос эксперту" class="lk-inner-item-title-img">
+                  Задайте вопрос эксперту
+                </p>
+                <p>Индивидуальные консультации с технологами ARAVIA.
+                  <br>
+                  Теперь мы стали еще ближе!</p>
+
+                <a href="#" class="btn btn-main btn--lk-inner-item-bottom">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
+{% endblock %}

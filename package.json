@@ -29,6 +29,8 @@
     "gulp-nunjucks-render": "^2.2.3",
     "slick-carousel": "^1.8.1",
     "jquery-ui": "^1.12.1",
-    "jquery-ui-dist": "^1.12.1"
+    "jquery-ui-dist": "^1.12.1",
+    "intl-tel-input": "^17.0.3",
+    "jquery.maskedinput": "^1.4.1"
   }
 }

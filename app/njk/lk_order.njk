@@ -1,0 +1,519 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="lk-breadcrumbs-block">
+    <div class="container">
+      {% from "app/njk/macro.njk" import breadcrumbs %}
+      {{ breadcrumbs([['Личный кабинет']]) }}
+    </div>
+  </section>
+  <section class="lk-block">
+    <div class="container">
+      <div class="row">
+        <div class="lk-sidebar-col">
+          <aside class="lk-sidebar">
+            <div class="lk-sidebar-info">
+              <div class="lk-sidebar-info-img" style="background-image: url('./images/dest/img/avatarimg.png');"></div>
+              <p class="lk-sidebar-info-name text-center">Антон</p>
+              <p class="lk-sidebar-info-text text-center">
+                Последнее посещение:
+                <br>
+                <span>19/02/2020</span>
+              </p>
+            </div>
+            <nav class="lk-sidebar-nav">
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/accountn.png" alt="иконка личный кабинет" class="lk-sidebar-nav-item-icon">
+                <span>Личный кабинет</span>
+              </a>
+              <span class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/personal-information.png" alt="иконка Мои данные" class="lk-sidebar-nav-item-icon">
+                <span>Мои данные</span>
+              </span>
+              <a href="#" class="lk-sidebar-nav-item lk-sidebar-nav-item--active">
+                <img src="./images/dest/icons/package-active.png" alt="иконка Мои заказы" class="lk-sidebar-nav-item-icon">
+                <span>Мои заказы</span>
+              </a>
+              <div class="lk-sidebar-nav-item-wrapper">
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/gps.png" alt="иконка Мои адреса" class="lk-sidebar-nav-item-icon">
+                  <span>Мои адреса</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/mail.png" alt="иконка Подписки" class="lk-sidebar-nav-item-icon">
+                  <span>Подписки</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/heart11.png" alt="иконка Лист желаний" class="lk-sidebar-nav-item-icon">
+                  <span>Лист желаний</span>
+                </a>
+                <a href="#" class="lk-sidebar-nav-item">
+                  <img src="./images/dest/icons/certificate11.png" alt="иконка Сертификаты" class="lk-sidebar-nav-item-icon">
+                  <span>Сертификаты</span>
+                </a>
+              </div>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/coin.png" alt="иконка ARAVIA бонус" class="lk-sidebar-nav-item-icon">
+                <span>ARAVIA бонус</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/crown1.png" alt="иконка Партнерская программа" class="lk-sidebar-nav-item-icon">
+                <span>Партнерская программа</span>
+              </a>
+              <a href="#" class="lk-sidebar-nav-item">
+                <img src="./images/dest/icons/question1.png" alt="иконка Консультации" class="lk-sidebar-nav-item-icon">
+                <span>Консультации</span>
+              </a>
+            </nav>
+          </aside>
+        </div>
+        <div class="lk-inner-col">
+          <p class="lk-inner-title">Мои заказы</p>
+          <div class="lk-inner-tabs-nav">
+            <label class="lk-inner-tab-wrapper">
+              <input type="radio" class="lk-inner-tab-input" checked="checked" name="lk-inner-tab" onchange="onShowMenuTab(this, 'currentOrder')">
+              <span class="lk-inner-tab-text">Текущие заказы</span>
+            </label>
+            <label class="lk-inner-tab-wrapper">
+              <input type="radio" class="lk-inner-tab-input" name="lk-inner-tab" onchange="onShowMenuTab(this, 'historyOrder')">
+              <span class="lk-inner-tab-text">История покупок</span>
+            </label>
+          </div>
+          <div class="lk-inner-tab-order show" id="currentOrder" data-tab-name="lk-inner-tab">
+            {% for i in range(0, 3) %}
+              <div class="lk-inner-tab-item js--spoiler-order-item-parent">
+                <table class="lk-inner-tab-table-head">
+                  <tr>
+                    <th>Номер заказа</th>
+                    <th>Статус</th>
+                    <th>Сумма заказа</th>
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Заказ
+                        <br>
+                        № 19022020-00001
+                      </b>
+                      <br>
+                      <span class="lk-inner-tab-table-thin">от 19.02.2020</span>
+                    </td>
+                    <td>В обработке</td>
+                    <td>12500<span class="rub">i</span></td>
+                    <td class="text-right lk-inner-tab-table-last">
+                      <button class="btn-lk-inner-text" onclick="onToggleSpiolerOrder(this)">
+                        <span class="btn-lk-inner-text-close">подробнее</span>
+                        <span class="btn-lk-inner-text-opened">свернуть</span>
+                      </button>
+                      <button class="btn-lk-inner-remove">
+                        <span class="visually-hidden">удалить</span>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+                <div class="lk-inner-tab-item-product-wrapper js--spoiler-order-item">
+                  <table class="lk-inner-tab-item-product">
+                    <tr>
+                      <th>Товар</th>
+                      <th class="text-center">Количество</th>
+                      <th class="text-center">Цена</th>
+                      <th class="text-center">Скидка</th>
+                      <th class="text-center">Сумма</th>
+                    </tr>
+                    <tr>
+                      <td class="lk-inner-tab-item-product-td">
+                        <div class="lk-inner-tab-item-product-inner">
+                          <img src="./images/dest/img/50ml_1.png" alt="Товар" class="lk-inner-tab-item-product-img">
+                          <div class="lk-inner-tab-item-product-text-block">
+                            <p class="lk-inner-tab-item-product-name">ARAVIA Professional</p>
+                            <p class="lk-inner-tab-item-product-desc">Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>1</td>
+                      <td>1500<span class="rub">i</span></td>
+                      <td>0<span class="rub">i</span></td>
+                      <td>1500<span class="rub">i</span></td>
+                    </tr>
+                  </table>
+                  <div class="lk-inner-tab-item-product-info">
+                    <p>
+                      <span>Товаров на сумму:</span><span class="lk-inner-tab-item-product-cost">1500<span class="rub">i</span></span></p>
+                    <p>
+                      <span>Скидка:</span><span class="lk-inner-tab-item-product-cost">-</span></p>
+                    <p>
+                      <span>Доставка:</span><span class="lk-inner-tab-item-product-cost">300<span class="rub">i</span></span></p>
+                    <p>
+                      <span>
+                        <b>Итого:</b>
+                      </span>
+                      <span class="lk-inner-tab-item-product-cost">
+                        <b>1800<span class="rub">i</span></b></span></p>
+                  </div>
+                  <div class="row row--wrap lk-inner-tab-item-delivery-block">
+                    <div class="lk-inner-tab-item-delivery-col">
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Получатель:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Антон
+                          </span>
+                          <span>+7 (926) 000-00-00</span>
+                          <span>anton@mail.ru</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Способ доставки:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Доставка курьером</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Способ оплаты:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Наличные</span>
+                        </p>
+                      </div>
+
+                    </div>
+                    <div class="lk-inner-tab-item-delivery-col">
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Метро Новые черемушки</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>с 10 до 18</span>
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-inner-tab-item-btns">
+                  <button class="btn-main btn-lk-inner-tab-item">Повторить</button>
+                  <button class="btn-main btn-lk-inner-tab-item">Оплатить</button>
+                </div>
+              </div>
+            {% endfor %}
+            <div class="lk-inner-tab-item js--spoiler-order-item-parent">
+              <table class="lk-inner-tab-table-head">
+                <tr>
+                  <th>Номер заказа</th>
+                  <th>Статус</th>
+                  <th>Сумма заказа</th>
+
+                </tr>
+                <tr>
+                  <td>
+                    <b>Заказ
+                      <br>
+                      № 19022020-00001
+                    </b>
+                    <br>
+                    <span class="lk-inner-tab-table-thin">от 19.02.2020</span>
+                  </td>
+                  <td>Доставлен</td>
+                  <td>12500<span class="rub">i</span></td>
+                  <td class="text-right lk-inner-tab-table-last">
+                    <button class="btn-lk-inner-text" onclick="onToggleSpiolerOrder(this)">
+                      <span class="btn-lk-inner-text-close">подробнее</span>
+                      <span class="btn-lk-inner-text-opened">свернуть</span>
+                    </button>
+                    <span class="icon-lk-inner-box"></span>
+                  </td>
+                </tr>
+              </table>
+              <div class="lk-inner-tab-item-product-wrapper js--spoiler-order-item">
+                <table class="lk-inner-tab-item-product">
+                  <tr>
+                    <th>Товар</th>
+                    <th class="text-center">Количество</th>
+                    <th class="text-center">Цена</th>
+                    <th class="text-center">Скидка</th>
+                    <th class="text-center">Сумма</th>
+                  </tr>
+                  <tr>
+                    <td class="lk-inner-tab-item-product-td">
+                      <div class="lk-inner-tab-item-product-inner">
+                        <img src="./images/dest/img/50ml_1.png" alt="Товар" class="lk-inner-tab-item-product-img">
+                        <div class="lk-inner-tab-item-product-text-block">
+                          <p class="lk-inner-tab-item-product-name">ARAVIA Professional</p>
+                          <p class="lk-inner-tab-item-product-desc">Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>1</td>
+                    <td>1500<span class="rub">i</span></td>
+                    <td>0<span class="rub">i</span></td>
+                    <td>1500<span class="rub">i</span></td>
+                  </tr>
+                </table>
+                <div class="lk-inner-tab-item-product-info">
+                  <p>
+                    <span>Товаров на сумму:</span><span class="lk-inner-tab-item-product-cost">1500<span class="rub">i</span></span></p>
+                  <p>
+                    <span>Скидка:</span><span class="lk-inner-tab-item-product-cost">-</span></p>
+                  <p>
+                    <span>Доставка:</span><span class="lk-inner-tab-item-product-cost">300<span class="rub">i</span></span></p>
+                  <p>
+                    <span>
+                      <b>Итого:</b>
+                    </span>
+                    <span class="lk-inner-tab-item-product-cost">
+                      <b>1800<span class="rub">i</span></b></span></p>
+                </div>
+                <div class="row row--wrap lk-inner-tab-item-delivery-block">
+                  <div class="lk-inner-tab-item-delivery-col">
+                    <div class="lk-inner-tab-item-delivery-inner">
+                      <p class="lk-inner-tab-item-delivery-title">Получатель:
+                      </p>
+                      <p class="lk-inner-tab-item-delivery-text">
+                        <span>Антон
+                        </span>
+                        <span>+7 (926) 000-00-00</span>
+                        <span>anton@mail.ru</span>
+                      </p>
+                    </div>
+
+                    <div class="lk-inner-tab-item-delivery-inner">
+                      <p class="lk-inner-tab-item-delivery-title">Способ доставки:
+                      </p>
+                      <p class="lk-inner-tab-item-delivery-text">
+                        <span>Доставка курьером</span>
+                      </p>
+                    </div>
+
+                    <div class="lk-inner-tab-item-delivery-inner">
+                      <p class="lk-inner-tab-item-delivery-title">Способ оплаты:
+                      </p>
+                      <p class="lk-inner-tab-item-delivery-text">
+                        <span>Наличные</span>
+                      </p>
+                    </div>
+
+                  </div>
+                  <div class="lk-inner-tab-item-delivery-col">
+                    <div class="lk-inner-tab-item-delivery-inner">
+                      <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                      <p class="lk-inner-tab-item-delivery-text">
+                        <span>Метро Новые черемушки</span>
+                      </p>
+                    </div>
+
+                    <div class="lk-inner-tab-item-delivery-inner">
+                      <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                      <p class="lk-inner-tab-item-delivery-text">
+                        <span>с 10 до 18</span>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="lk-inner-tab-item-btns">
+                <button class="btn-main btn-lk-inner-tab-item">Повторить</button>
+              </div>
+            </div>
+            <button class="lk-inner-tab-order-more">Загрузить еще</button>
+            <div class="lk-inner-tab-order-message">
+              <img src="./images/dest/icons/attention.png" alt="Внимание" class="lk-inner-tab-order-message-img">
+              <p>Если вы хотите отказаться от заказа, объединить несколько заказов или изменить данные, пожалуйста , свяжитесь с нами по тел: 8(800)777-17-39 или напишите на support@aravia-prof.ru</p>
+            </div>
+          </div>
+          <div class="lk-inner-tab-order" id="historyOrder" data-tab-name="lk-inner-tab">
+            {% for i in range(0, 3) %}
+              <div class="lk-inner-tab-item js--spoiler-order-item-parent">
+                <table class="lk-inner-tab-table-head">
+                  <tr>
+                    <th>Номер заказа</th>
+                    <th>Статус</th>
+                    <th>Сумма заказа</th>
+
+                  </tr>
+                  <tr>
+                    <td>
+                      <b>Заказ
+                        <br>
+                        № 19022020-00001
+                      </b>
+                      <br>
+                      <span class="lk-inner-tab-table-thin">от 19.02.2020</span>
+                    </td>
+                    <td>Доставлен</td>
+                    <td>12500<span class="rub">i</span></td>
+                    <td class="text-right lk-inner-tab-table-last">
+                      <button class="btn-lk-inner-text" onclick="onToggleSpiolerOrder(this)">
+                        <span class="btn-lk-inner-text-close">подробнее</span>
+                        <span class="btn-lk-inner-text-opened">свернуть</span>
+                      </button>
+                      <span class="icon-lk-inner-box"></span>
+                    </td>
+                  </tr>
+                </table>
+                <div class="lk-inner-tab-item-product-wrapper js--spoiler-order-item">
+                  <table class="lk-inner-tab-item-product">
+                    <tr>
+                      <th>Товар</th>
+                      <th class="text-center">Количество</th>
+                      <th class="text-center">Цена</th>
+                      <th class="text-center">Скидка</th>
+                      <th class="text-center">Сумма</th>
+                    </tr>
+                    <tr>
+                      <td class="lk-inner-tab-item-product-td">
+                        <div class="lk-inner-tab-item-product-inner">
+                          <img src="./images/dest/img/50ml_1.png" alt="Товар" class="lk-inner-tab-item-product-img">
+                          <div class="lk-inner-tab-item-product-text-block">
+                            <p class="lk-inner-tab-item-product-name">ARAVIA Professional</p>
+                            <p class="lk-inner-tab-item-product-desc">Крем лифтинговый с аминокислотами и полисахаридами Anti-Wrinkle Lifting Cream, 100 мл</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>1</td>
+                      <td>1500<span class="rub">i</span></td>
+                      <td>0<span class="rub">i</span></td>
+                      <td>1500<span class="rub">i</span></td>
+                    </tr>
+                  </table>
+                  <div class="lk-inner-tab-item-product-info">
+                    <p>
+                      <span>Товаров на сумму:</span><span class="lk-inner-tab-item-product-cost">1500<span class="rub">i</span></span></p>
+                    <p>
+                      <span>Скидка:</span><span class="lk-inner-tab-item-product-cost">-</span></p>
+                    <p>
+                      <span>Доставка:</span><span class="lk-inner-tab-item-product-cost">300<span class="rub">i</span></span></p>
+                    <p>
+                      <span>
+                        <b>Итого:</b>
+                      </span>
+                      <span class="lk-inner-tab-item-product-cost">
+                        <b>1800<span class="rub">i</span></b></span></p>
+                  </div>
+                  <div class="row row--wrap lk-inner-tab-item-delivery-block">
+                    <div class="lk-inner-tab-item-delivery-col">
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Получатель:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Антон
+                          </span>
+                          <span>+7 (926) 000-00-00</span>
+                          <span>anton@mail.ru</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Способ доставки:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Доставка курьером</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Способ оплаты:
+                        </p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Наличные</span>
+                        </p>
+                      </div>
+
+                    </div>
+                    <div class="lk-inner-tab-item-delivery-col">
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>Метро Новые черемушки</span>
+                        </p>
+                      </div>
+
+                      <div class="lk-inner-tab-item-delivery-inner">
+                        <p class="lk-inner-tab-item-delivery-title">Адрес доставки:</p>
+                        <p class="lk-inner-tab-item-delivery-text">
+                          <span>с 10 до 18</span>
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="lk-inner-tab-item-btns">
+                  <button class="btn-main btn-lk-inner-tab-item">Повторить</button>
+                </div>
+              </div>
+            {% endfor %}
+            <button class="lk-inner-tab-order-more">Загрузить еще</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="catalog-feature">
+  <h1 class="h1-base h1-base--category-feature text-center">
+    <span class="h1-base-text-underline ">наши преимущества</span></h1>
+  <div class="container">
+    <div class="main-feature-inner row row--wrap">
+      {% set featureItems = [
+        {
+          title: 'самый </br> полный </br> ассортимент',
+          img: 'cosmetics.png'
+        }, {
+          title: 'доставка </br> по России',
+          img: 'truckn.png'
+        }, {
+          title: 'эксклюзивы </br> aravia',
+          img: 'crown.png'
+        }, {
+          title: 'Программа </br> лояльности',
+          img: 'money.png'
+        }, {
+          title: 'безопасные </br> платежи',
+          img: 'safe.png'
+        }
+      ]
+ %}
+      {% for item in featureItems %}
+        <div class="main-feature-col">
+          <div class="main-feature-item">
+            <div class="main-feature-item-icon">
+              <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+            </div>
+            <p class="main-feature-item-text">
+              {{item.title | safe }}
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="online-block">
+  <div class="container">
+    <div class="online-block-title-wrapper">
+      <p class="online-block-title">Узнайте, что покупают другие пользователи в режиме реального времени!</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row--wrap">
+      {% for i in range(0, 5) %}
+        <div class="online-block-col">
+          {% from "app/njk/macro.njk" import productCardSmall %}
+          {{ productCardSmall(true,'./images/dest/img/sliderProduct.png', 'hit') }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section class="catalog-mail">
+  {% include "app/njk/parts/mail_block.njk" %}
+</section>
+{% endblock %}

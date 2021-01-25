@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   rangeSliderInit();
+  datepickerInit();
+  $('#phone').mask('(999) 999-99-99');
 });
 
 $('#mainSlider').slick({
@@ -164,6 +166,25 @@ $('.services-offer-slider').slick({
   //   },
   // ],
 });
+$('.lk-inner-item-slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  infinite: false,
+  dots: false,
+  arrows: true,
+  prevArrow: $('.slider-arrow-basked--main-prew'),
+  nextArrow: $('.slider-arrow-basked--main-next'),
+  // responsive: [
+  //   {
+  //     breakpoint: 1000,
+  //     settings: {
+  //       dots: false,
+  //       slidesToShow: 1,
+  //       arrows: false,
+  //     },
+  //   },
+  // ],
+});
 
 $('#productCardSlider').slick({
   slidesToShow: 1,
@@ -250,4 +271,73 @@ const getCounterVal = (id) => {
 
 const setCounterVal = (id, val) => {
   document.getElementById(id).value = val;
+};
+const onToggleSpiolerOrder = (el) => {
+  const parent = $(el).parents('.js--spoiler-order-item-parent');
+  parent.find('.js--spoiler-order-item').slideToggle(200);
+  $(el).toggleClass('opened');
+};
+onToggleAddressForm = () => {
+  document.querySelector('#addressInner').classList.toggle('hide');
+  document.querySelector('#addressForm').classList.toggle('show');
+};
+const datepickerInit = () => {
+  $('#date').datepicker({
+    beforeShow: function (input, inst) {
+      setTimeout(function () {
+        inst.dpDiv.css({
+          top:
+            document.querySelector('#date').getBoundingClientRect().top - 278,
+          left: document.querySelector('#date').getBoundingClientRect().left,
+        });
+      }, 0);
+    },
+  });
+  $.datepicker.regional['ru'] = {
+    prevText: '',
+    nextText: '',
+    monthNames: [
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь',
+    ],
+    monthNamesShort: [
+      'Янв',
+      'Фев',
+      'Мар',
+      'Апр',
+      'Май',
+      'Июн',
+      'Июл',
+      'Авг',
+      'Сен',
+      'Окт',
+      'Ноя',
+      'Дек',
+    ],
+    dayNames: [
+      'воскресенье',
+      'понедельник',
+      'вторник',
+      'среда',
+      'четверг',
+      'пятница',
+      'суббота',
+    ],
+    dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
+    dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+    dateFormat: 'dd-mm-yy',
+    showButtonPanel: true,
+    closeText: '',
+  };
+  $.datepicker.setDefaults($.datepicker.regional['ru']);
 };
