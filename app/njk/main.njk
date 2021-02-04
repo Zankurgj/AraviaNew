@@ -98,7 +98,7 @@
           <div class="main-promo-tab tab-item tab-item--show" id="promoTab1" data-tab-name="promo-nav">
             <div class="main-promo-stock">
               <div class="row row--wrap">
-                <div class="main-promo-stock-col2 row--wrap">
+                <div class="main-promo-stock-col2 main-promo-stock-col2--top row--wrap">
                   <div class="main-promo-stock-col2">
                     <div class="main-promo-stock-item main-promo-stock-item-col2" style="background-image: url('/images/dest/img/stock1.png');"></div>
                   </div>
@@ -132,7 +132,7 @@
                   </div>
                 </div>
 
-                <div class="main-promo-stock-col2">
+                <div class="main-promo-stock-col2 main-promo-stock-col2--top">
                   <div class="main-promo-stock-item main-promo-stock-item-col1" style="background-image: url('/images/dest/img/stock3.png');">
                     <div class="main-promo-stock-item-inner main-promo-stock-item-4">
                       <p class="promo-stock-item-title">дарим скраб</p>
@@ -175,7 +175,7 @@
       <div class="container">
         <h1 class="h1-base h1-base--main-present text-center">
           <span class="h1-base-text-underline">подарочные наборы по специальной цене</span></h1>
-        <div class="main-present-inner row row--wrapp">
+        <div class="main-present-inner row row--wrap">
           {% for i in range(0, 3) %}
             <div class="main-present-col">
               {% from "app/njk/macro.njk" import productCard %}

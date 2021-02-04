@@ -37,16 +37,23 @@ $('#productSlider').slick({
   dots: false,
   prevArrow: $('.slider-arrow--product-prew'),
   nextArrow: $('.slider-arrow--product-next'),
-  // responsive: [
-  //   {
-  //     breakpoint: 1000,
-  //     settings: {
-  //       dots: false,
-  //       slidesToShow: 1,
-  //       arrows: false,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        dots: false,
+        slidesToShow: 2,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        dots: false,
+        slidesToShow: 1,
+      },
+    },
+  ],
 });
 $('.js-product-slider-promo').slick({
   slidesToShow: 4,
@@ -75,16 +82,23 @@ $('#productSliderNew').slick({
   dots: false,
   prevArrow: $('.slider-arrow--product-new-prew'),
   nextArrow: $('.slider-arrow--product-new-next'),
-  // responsive: [
-  //   {
-  //     breakpoint: 1000,
-  //     settings: {
-  //       dots: false,
-  //       slidesToShow: 1,
-  //       arrows: false,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        dots: false,
+        slidesToShow: 2,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        dots: false,
+        slidesToShow: 1,
+      },
+    },
+  ],
 });
 
 $('#productSliderSpecial').slick({
@@ -95,16 +109,23 @@ $('#productSliderSpecial').slick({
   dots: false,
   prevArrow: $('.slider-arrow--product-special-prew'),
   nextArrow: $('.slider-arrow--product-special-next'),
-  // responsive: [
-  //   {
-  //     breakpoint: 1000,
-  //     settings: {
-  //       dots: false,
-  //       slidesToShow: 1,
-  //       arrows: false,
-  //     },
-  //   },
-  // ],
+  responsive: [
+    {
+      breakpoint: 1000,
+      settings: {
+        dots: false,
+        slidesToShow: 2,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
 });
 
 $('#socialSlider').slick({
@@ -340,4 +361,36 @@ const datepickerInit = () => {
     closeText: '',
   };
   $.datepicker.setDefaults($.datepicker.regional['ru']);
+};
+const onToggleSearch = () => {
+  const searchSelector = document.querySelector('.main-header-search-inner');
+  searchSelector.classList.toggle('main-header-search-inner--show');
+  document.querySelector('#search-input').focus();
+};
+
+const onShowSubmenu = (el) => {
+  $(el).find('.main-header-submenu').addClass('main-header-submenu--show');
+};
+const onHideSubmenu = (e) => {
+  event.stopPropagation();
+  $('.main-header-submenu--show').removeClass('main-header-submenu--show');
+};
+
+const checkMobile = () => {
+  const mobileBp = 1024;
+  if (window.innerWidth <= mobileBp) {
+    return true;
+  }
+  return false;
+};
+
+const onShowMenu = (el) => {
+  el.classList.toggle('btn-hamburger--active');
+  const menu = document.querySelector('.main-header--desc');
+  menu.classList.toggle('show');
+  bodyStopScroll();
+};
+
+const bodyStopScroll = () => {
+  document.querySelector('body').classList.toggle('body-stop-sroll');
 };

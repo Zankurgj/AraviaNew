@@ -14,6 +14,9 @@ $base-timing: ease-in-out;
 $maxWidth: 1440px;
 $contentPadding: 80px;
 
+$extra-large-bp: 1366px;
+$mobile-bp: 1000px;
+
 // FONTS LOAD SECTION
 @mixin font($f-name, $f-style, $f-weight, $f-url) {
   @font-face {
@@ -46,7 +49,7 @@ body {
   overflow-x: hidden;
   color: $textcolor;
   -webkit-font-smoothing: antialiased;
-  &.body--no-scroll {
+  &.body-stop-sroll {
     overflow: hidden;
   }
 }
@@ -61,6 +64,9 @@ body {
 }
 .page {
   flex: 1 0 auto;
+  @media screen and (max-width: $mobile-bp) {
+    padding: 94px 0 0 0;
+  }
 }
 .main-footer {
   flex-shrink: 0;
@@ -102,6 +108,12 @@ body {
   max-width: $maxWidth;
   padding: 0 $contentPadding;
   margin: 0 auto;
+  @media screen and (max-width: $extra-large-bp) {
+    padding: 0 40px;
+  }
+  @media screen and (max-width: $mobile-bp) {
+    padding: 0 16px;
+  }
 }
 .slick-slide {
   &:focus {
