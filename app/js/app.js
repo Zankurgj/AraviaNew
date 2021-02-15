@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   rangeSliderInit();
   datepickerInit();
   $('#phone').mask('(999) 999-99-99');
+  $('#time').mask('99:99');
 });
 
 $('#mainSlider').slick({
@@ -303,17 +304,7 @@ onToggleAddressForm = () => {
   document.querySelector('#addressForm').classList.toggle('show');
 };
 const datepickerInit = () => {
-  $('#date').datepicker({
-    beforeShow: function (input, inst) {
-      setTimeout(function () {
-        inst.dpDiv.css({
-          top:
-            document.querySelector('#date').getBoundingClientRect().top - 278,
-          left: document.querySelector('#date').getBoundingClientRect().left,
-        });
-      }, 0);
-    },
-  });
+  $('#date').datepicker();
   $.datepicker.regional['ru'] = {
     prevText: '',
     nextText: '',
@@ -393,4 +384,9 @@ const onShowMenu = (el) => {
 
 const bodyStopScroll = () => {
   document.querySelector('body').classList.toggle('body-stop-sroll');
+};
+
+const onShowNewAddress = (el, id) => {
+  el.classList.toggle('active');
+  document.querySelector(`#${id}`).classList.toggle('show');
 };

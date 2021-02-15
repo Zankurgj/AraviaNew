@@ -82,6 +82,19 @@
     opacity: 0;
   }
 }
+.radio-main-fake--purple {
+  &::after {
+    background-color: #c0a7d7;
+  }
+}
+.radio-main-fake--small {
+  width: 14px;
+  height: 14px;
+  &::after {
+    width: 8px;
+    height: 8px;
+  }
+}
 .select-main-wrapper {
   position: relative;
   display: table;

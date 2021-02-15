@@ -85,3 +85,11 @@ input[type='submit'] {
   background-position: center bottom 6px;
   background-image: url('../images/dest/icons/dislike-comment.png');
 }
+.btn--gray-underlaine {
+  color: #888888;
+  font-size: 16px;
+  text-decoration: underline;
+  &:hover {
+    opacity: 0.8;
+  }
+}
