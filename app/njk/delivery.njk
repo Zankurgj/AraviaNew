@@ -1,0 +1,551 @@
+{% extends "app/njk/layout/main.njk" %}
+{% block content %}
+  <section class="basket-breadcrumbs container">
+    <a href="#" class="basket-back">
+      Вернуться в корзину
+    </a>
+  </section>
+  <h1 class="h1-basket">Оформление заказа</h1>
+  <section class="basket-content">
+    <div class="container">
+      <div class="basket-nav-tabs row">
+        <a href="#" class="basket-nav-tabs-item">
+          Корзина
+        </a>
+        <span href="#" class="basket-nav-tabs-item active">
+          Оплата и доставка
+        </span>
+        <a href="#" class="basket-nav-tabs-item">
+          Оплата
+        </a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="basket-tab-inner">
+        <div class="basket-tab-inner-nav">
+          <label class="basket-tab-inner-nav-item">
+            <input type="radio" class="basket-tab-inner-nav-input" name="basket-tab-inner-nav" onchange="onShowMenuTab(this,'basket-sub-tab-1')" checked="checked">
+            <span class="basket-tab-inner-nav-text">Самовывоз</span>
+          </label>
+
+          <label class="basket-tab-inner-nav-item">
+            <input type="radio" class="basket-tab-inner-nav-input" name="basket-tab-inner-nav" onchange="onShowMenuTab(this,'basket-sub-tab-2')">
+            <span class="basket-tab-inner-nav-text">Доставка курьером</span>
+          </label>
+
+          <label class="basket-tab-inner-nav-item">
+            <input type="radio" class="basket-tab-inner-nav-input" name="basket-tab-inner-nav" onchange="onShowMenuTab(this,'basket-sub-tab-3')">
+            <span class="basket-tab-inner-nav-text">Доставка Сдэк</span>
+          </label>
+
+          <label class="basket-tab-inner-nav-item">
+            <input type="radio" class="basket-tab-inner-nav-input" name="basket-tab-inner-nav" onchange="onShowMenuTab(this,'basket-sub-tab-4')">
+            <span class="basket-tab-inner-nav-text">получить на почте</span>
+          </label>
+        </div>
+        <div class="basket-tab-inner-tab-wrapper row">
+          <div class="basket-tab-inner-tab-col">
+            <div class="basket-tab-inner-tab show" data-tab-name="basket-tab-inner-nav" id="basket-sub-tab-1">
+              <div class="basket-tab-inner-search-head">
+                <span>Выбор пункта самовывоза в городе</span>
+                <button class="btn--gray-underlaine btn--basket-tab-search">Москва</button>
+                <label class="basket-tab-inner-search-wrapper">
+                  <span class="basket-tab-inner-search-text">Поиск</span>
+                  <input type="text" class="basket-tab-inner-search">
+                </label>
+              </div>
+              <div class="basket-tab-inner-btns">
+                <label class="basket-tab-inner-delibery-wrapper">
+                  <input type="checkbox" class="basket-tab-inner-delibery-input" checked="checked">
+                  <span class="basket-tab-inner-delibery-text">ARAVIA Professional</span>
+                </label>
+
+                <label class="basket-tab-inner-delibery-wrapper">
+                  <input type="checkbox" class="basket-tab-inner-delibery-input">
+                  <span class="basket-tab-inner-delibery-text">ПВЗ</span>
+                </label>
+                <button class="basket-tab-inner-delibery-input-del">Очистить</button>
+              </div>
+              <div class="basket-tab-inner-adress-wrapper row">
+
+                <div class="basket-tab-inner-address-col row">
+                  <div class="basket-tab-inner-address-item">
+                    <p>
+                      <b>ПВЗ:</b>
+                      Новокузьминская (7702-448) Первая новокузьминская ул, д.25
+                    </p>
+                    <p>
+                      <b>Часы работы:</b>
+                      ежедневно с 10:00 до 20:00</p>
+                    <p>
+                      <b >Метро:</b>
+                      Рязанский проспект</p>
+                    <p>
+                      <b>Дата доставки: 28 марта 2020</b>
+                    </p>
+                    <button class="btn-main btn--basket-tab-inner-address">Выбрать</button>
+                  </div>
+
+                  <div class="basket-tab-inner-address-item">
+                    <p>
+                      <b>ПВЗ:</b>
+                      Новокузьминская (7702-448) Первая новокузьминская ул, д.25
+                    </p>
+                    <p>
+                      <b>Часы работы:</b>
+                      ежедневно с 10:00 до 20:00</p>
+                    <p>
+                      <b >Метро:</b>
+                      Рязанский проспект</p>
+                    <p>
+                      <b>Дата доставки: 28 марта 2020</b>
+                    </p>
+                    <button class="btn-main btn--basket-tab-inner-address">Выбрать</button>
+                  </div>
+
+                  <div class="basket-tab-inner-address-item">
+                    <p>
+                      <b>ПВЗ:</b>
+                      Новокузьминская (7702-448) Первая новокузьминская ул, д.25
+                    </p>
+                    <p>
+                      <b>Часы работы:</b>
+                      ежедневно с 10:00 до 20:00</p>
+                    <p>
+                      <b >Метро:</b>
+                      Рязанский проспект</p>
+                    <p>
+                      <b>Дата доставки: 28 марта 2020</b>
+                    </p>
+                    <button class="btn-main btn--basket-tab-inner-address">Выбрать</button>
+                  </div>
+
+                  <div class="basket-tab-inner-address-item">
+                    <p>
+                      <b>ПВЗ:</b>
+                      Новокузьминская (7702-448) Первая новокузьминская ул, д.25
+                    </p>
+                    <p>
+                      <b>Часы работы:</b>
+                      ежедневно с 10:00 до 20:00</p>
+                    <p>
+                      <b >Метро:</b>
+                      Рязанский проспект</p>
+                    <p>
+                      <b>Дата доставки: 28 марта 2020</b>
+                    </p>
+                    <button class="btn-main btn--basket-tab-inner-address">Выбрать</button>
+                  </div>
+                </div>
+
+                <div class="basket-tab-inner-map-col">
+                  <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afac7c94ddf01d651715ae3b23a9f7236561ab415e54be543e8681df662789f63&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="basket-tab-inner-tab" data-tab-name="basket-tab-inner-nav" id="basket-sub-tab-2">
+              <div class="basket-courier-form">
+                <div class="row row--wrap row--basket-top-input">
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Имя">
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Телефон">
+                      <span class="lk-input-msg">Укажите номер телефона</span>
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="E-mail">
+                    </label>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <div class="basket-tab-inner-checkbox-wrapper">
+                    <p class="basket-tab-inner-title">Адрес доставки:</p>
+                    <label class="checkbox-wrapper checkbox-wrapper--basket-tab">
+                      <input type="radio" class="radio-main" name="deliveryAddress">
+                      <span class="radio-main-fake radio-main-fake--basket radio-main-fake--small"></span>
+                      <span class="checkbox-text checkbox-text--basket-tab">Основной</span>
+                    </label>
+                    <p class="checkbox-text checkbox-text--basket-tab">метро Новослободская ул. Первая новокузьминская ул, д.25
+                    </p>
+
+                    <label class="checkbox-wrapper checkbox-wrapper--basket-tab">
+                      <input type="radio" class="radio-main" name="deliveryAddress">
+                      <span class="radio-main-fake radio-main-fake--basket radio-main-fake--small"></span>
+                      <span class="checkbox-text checkbox-text--basket-tab">Работа</span>
+                    </label>
+                    <p class="checkbox-text checkbox-text--basket-tab">метро Авиамоторная ул. Авиамоторная ул, д.10 к 2</p>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <button class="btn-link--basket-tab" type="button" onclick="onShowNewAddress(this,'courierAddres')">Добавить новый адрес</button>
+                </div>
+                <div class="basket-tab-inner-newaddress" id="courierAddres">
+                  <div class="row row--wrap">
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Город</p>
+                        <select class="lk-input lk-input--select">
+                          <option value="value1" selected="selected">Москва</option>
+                          <option value="value2">option1</option>
+                          <option value="value3">option1</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Ближайшее метро</p>
+                        <select class="lk-input lk-input--select">
+                          <option value="value2">option1</option>
+                          <option value="value3">option1</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row row--wrap">
+                    <div class="basket-courier-address-col basket-courier-address-col--6">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Улица*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Дом*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Корпус/строение*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Квартира*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Индекс*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+                  </div>
+                  <p class="basket-tab-inner-title">желаемая дата и время:</p>
+                  <div class="row row--wrap">
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <img src="./images/dest/icons/calendar-color.png" alt="календарь" class="lk-input-icon-calendar">
+                        <input type="text" class="lk-input" id="date" placeholder="ДД.ММ.ГГГГ">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <img src="./images/dest/icons/clock.png" alt="часы" class="lk-input-icon-calendar">
+                        <input type="text" class="lk-input" placeholder="00:00" id="time">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row row--wrap">
+                    <p class="lk-input-title">Подъезд и другие пожелания</p>
+                    <textarea class="base-textarea base-textarea--basket-courier-address"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basket-tab-inner-tab" data-tab-name="basket-tab-inner-nav" id="basket-sub-tab-3">
+              <div class="basket-courier-form">
+                <div class="row row--wrap row--basket-top-input">
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Имя">
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Телефон">
+                      <span class="lk-input-msg">Укажите номер телефона</span>
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="E-mail">
+                    </label>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <div class="basket-tab-inner-checkbox-wrapper">
+                    <p class="basket-tab-inner-title">Адрес доставки:</p>
+                    <label class="checkbox-wrapper checkbox-wrapper--basket-tab">
+                      <input type="radio" class="radio-main" name="cdekAddress">
+                      <span class="radio-main-fake radio-main-fake--basket radio-main-fake--small"></span>
+                      <span class="checkbox-text checkbox-text--basket-tab">Основной</span>
+                    </label>
+                    <p class="checkbox-text checkbox-text--basket-tab">метро Новослободская ул. Первая новокузьминская ул, д.25
+                    </p>
+
+                    <label class="checkbox-wrapper checkbox-wrapper--basket-tab">
+                      <input type="radio" class="radio-main" name="cdekAddress">
+                      <span class="radio-main-fake radio-main-fake--basket radio-main-fake--small"></span>
+                      <span class="checkbox-text checkbox-text--basket-tab">Работа</span>
+                    </label>
+                    <p class="checkbox-text checkbox-text--basket-tab">метро Авиамоторная ул. Авиамоторная ул, д.10 к 2</p>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <button class="btn-link--basket-tab" type="button" onclick="onShowNewAddress(this, 'cdekAddress')">Добавить новый адрес</button>
+                </div>
+                <div class="basket-tab-inner-newaddress" id="cdekAddress">
+                  <div class="row row--wrap">
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Город</p>
+                        <select class="lk-input lk-input--select">
+                          <option value="value1" selected="selected">Москва</option>
+                          <option value="value2">option1</option>
+                          <option value="value3">option1</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Ближайшее метро</p>
+                        <select class="lk-input lk-input--select">
+                          <option value="value2">option1</option>
+                          <option value="value3">option1</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row row--wrap">
+                    <div class="basket-courier-address-col basket-courier-address-col--6">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Улица*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Дом*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Корпус/строение*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Квартира*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-address-col basket-courier-address-col--3">
+                      <label class="lk-input-wrapper">
+                        <p class="lk-input-title">Индекс*</p>
+                        <input type="text" class="lk-input">
+                      </label>
+                    </div>
+                  </div>
+                  <p class="basket-tab-inner-title">желаемая дата и время:</p>
+                  <div class="row row--wrap">
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <img src="./images/dest/icons/calendar-color.png" alt="календарь" class="lk-input-icon-calendar">
+                        <input type="text" class="lk-input" id="date" placeholder="ДД.ММ.ГГГГ">
+                      </label>
+                    </div>
+
+                    <div class="basket-courier-col--3">
+                      <label class="lk-input-wrapper">
+                        <img src="./images/dest/icons/clock.png" alt="часы" class="lk-input-icon-calendar">
+                        <input type="text" class="lk-input" placeholder="00:00" id="time">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row row--wrap">
+                    <p class="lk-input-title">Подъезд и другие пожелания</p>
+                    <textarea class="base-textarea base-textarea--basket-courier-address"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="basket-tab-inner-tab" data-tab-name="basket-tab-inner-nav" id="basket-sub-tab-4">
+              <div class="basket-courier-form">
+                <div class="row row--wrap row--basket-top-input">
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Имя">
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="Телефон">
+                      <span class="lk-input-msg">Укажите номер телефона</span>
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <input type="text" class="lk-input" placeholder="E-mail">
+                    </label>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Город</p>
+                      <select class="lk-input lk-input--select">
+                        <option value="value1" selected="selected">Москва</option>
+                        <option value="value2">option1</option>
+                        <option value="value3">option1</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="basket-courier-col--3">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Индекс*</p>
+                      <input type="text" class="lk-input">
+                    </label>
+                  </div>
+                </div>
+                <div class="row row--wrap">
+                  <div class="basket-courier-address-col basket-courier-address-col--6">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Улица*</p>
+                      <input type="text" class="lk-input">
+                    </label>
+                  </div>
+                  <div class="basket-courier-address-col basket-courier-address-col--3">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Дом*</p>
+                      <input type="text" class="lk-input">
+                    </label>
+                  </div>
+
+                  <div class="basket-courier-address-col basket-courier-address-col--3">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Корпус/строение*</p>
+                      <input type="text" class="lk-input">
+                    </label>
+                  </div>
+
+                  <div class="basket-courier-address-col basket-courier-address-col--3">
+                    <label class="lk-input-wrapper">
+                      <p class="lk-input-title">Квартира*</p>
+                      <input type="text" class="lk-input">
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="basket-tab-inner-description-col">
+            <form class="basket-desrciption">
+              <div class="basket-desrciption-item">
+                <p class="basket-desrciption-item-text-block">
+                  <span class="basket-desrciption-title">Товары</span>
+                  <span class="basket-desrciption-cost basket-desrciption-cost--bold basket-desrciption-item--right">1219<span class="rub">i</span></span></p>
+                <p class="basket-desrciption-item-text-block">10 товаров</p>
+              </div>
+              <div class="basket-desrciption-item">
+                <p class="basket-desrciption-item-text-block">
+                  <span>Скидки по промокоду</span>
+                  <span class="basket-desrciption-cost basket-desrciption-item--right">339<span class="rub">i</span></span>
+                </p>
+              </div>
+              <div class="basket-desrciption-item">
+                <p class="basket-desrciption-item-text-block">
+                  <span>Скидки по подарочным сертификатам</span>
+                  <span class="basket-desrciption-cost basket-desrciption-item--right">0<span class="rub">i</span></span>
+                </p>
+              </div>
+              <div class="basket-desrciption-item">
+                <p class="basket-desrciption-item-text-block">
+                  <span>Оплата бонусами</span>
+                  <span class="basket-desrciption-cost basket-desrciption-item--right">-849<span class="rub">i</span></span>
+                </p>
+              </div>
+              <div class="basket-desrciption-item">
+                <p class="basket-desrciption-title">Доставка</p>
+                <p class="basket-desrciption-item-text-block">
+                  <span>Курьером</span>
+                  <span class="basket-desrciption-cost basket-desrciption-cost--bold basket-desrciption-item--right">300<span class="rub">i</span></span>
+                </p>
+                <div class="basket-desrciption-total">
+                  <p class="basket-desrciption-item-text-block">
+                    <span class="basket-desrciption-total-title">Общая
+                      <br>
+                      сумма к оплате:</span>
+                    <span class="basket-desrciption-cost basket-desrciption-cost--accent basket-desrciption-cost--bold basket-desrciption-item--right">1119<span class="rub">i</span></span>
+                  </p>
+                  <button class="btn-main btn--basket-desrciption-total" type="submit">Выбрать способ оплаты</button>
+                  <p class="basket-desrciption-subtext">
+                    Нажимая на кнопку «Выбрать способ оплаты» вы даете согласие на обработку и передачу ваших персональных данных в соответствии с
+                    <a href="#">политикой конфиденциальности</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="catalog-feature">
+    <h1 class="h1-base h1-base--category-feature text-center">
+      <span class="h1-base-text-underline ">наши преимущества</span></h1>
+    <div class="container">
+      <div class="main-feature-inner row row--wrap">
+        {% set featureItems = [
+          {
+            title: 'самый </br> полный </br> ассортимент',
+            img: 'cosmetics.png'
+          }, {
+            title: 'доставка </br> по России',
+            img: 'truckn.png'
+          }, {
+            title: 'эксклюзивы </br> aravia',
+            img: 'crown.png'
+          }, {
+            title: 'Программа </br> лояльности',
+            img: 'money.png'
+          }, {
+            title: 'безопасные </br> платежи',
+            img: 'safe.png'
+          }
+        ]
+ %}
+        {% for item in featureItems %}
+          <div class="main-feature-col">
+            <div class="main-feature-item">
+              <div class="main-feature-item-icon">
+                <img src="./images/dest/icons/{{item.img}}" alt="feature item">
+              </div>
+              <p class="main-feature-item-text">
+                {{item.title | safe }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}
